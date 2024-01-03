@@ -1,10 +1,10 @@
 import React from 'react'
-import MainCard from '../MainCard'
+import MainCard from '../mainCard/MainCard'
 
 const Latest = () => {
   return (
     <>
-    <div>Latest</div>
+    <h2>LATEST</h2>
     <MainCard />
     </>
   )

@@ -1,0 +1,17 @@
+.circle {
+    width: 10rem;
+}
+.wraper {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    box-shadow: 0px 0px 5px gray;
+}
+.photo {
+    width: 100%;
+}
+.text {
+    text-align: center;
+}
