@@ -1,0 +1,19 @@
+.wraper {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(225, 224, 224);
+    height: 7rem;
+    border-radius: .5rem;
+    width: 90%;
+}
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-left: 1rem;
+}
+.circle {
+    position: absolute;
+    right: 2rem;
+}

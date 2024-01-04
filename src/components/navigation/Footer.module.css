@@ -1,3 +1,5 @@
 .navBar {
     position: sticky;
+    bottom: 0rem;
+    background: white;
 }

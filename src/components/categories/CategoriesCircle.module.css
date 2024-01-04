@@ -1,13 +1,12 @@
-.circle {
-    width: 10rem;
-}
 .wraper {
+    /* width: 13%;
+    height: 13%; */
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
     overflow: hidden;
-    width: 10rem;
-    height: 10rem;
     display: flex;
-    box-shadow: 0px 0px 5px gray;
+    /* box-shadow: 0px 0px 5px gray; */
 }
 .photo {
     width: 100%;

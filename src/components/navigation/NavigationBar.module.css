@@ -1,5 +1,8 @@
 .navigation {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-top: 1px solid black;
+    padding: 0 1rem;
+    padding-top: .3rem;
 }
