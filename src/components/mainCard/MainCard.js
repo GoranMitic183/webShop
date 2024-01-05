@@ -4,15 +4,17 @@ import { faHeart, faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import classes from './MainCard.module.css'
 import { Link } from "react-router-dom";
 
-const MainCard = ({id}) => {
+const MainCard = (products) => {
   return (
-    <div className={classes.card}>
+    <div>
+    {products.map((product) => (
+      <div className={classes.card}>
       <Link to={'/product'} className={classes.wraper}>
-        <img src="https://www.titaniumsport.rs/wp-content/uploads/2019/03/Gold-Standard-100-Whey-2.27kg-Double-Rich-Chocolate-1.jpg" alt="slika" className={classes.cover}></img>
+        <img src={product.img} alt="slika" className={classes.cover}></img>
         <div className={classes.text}>
-        <h2>Active Pharma</h2>
-        <h3>Protein</h3>
-        <p>3.999 RSD</p>
+        <h2>{product.productName}</h2>
+        <h3>{product.type}</h3>
+        <p>{product.price + " RSD"}</p>
         </div>
       </Link>
 
@@ -25,6 +27,8 @@ const MainCard = ({id}) => {
         </div>
       </div>
     </div>
+  ))}
+  </div>
   );
 };
 
