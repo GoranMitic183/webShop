@@ -1,4 +1,38 @@
 .wraper {
-    height: 80%;
-    width: 100%;
+    /* height: 80%;
+    width: 100%; */
+}
+.pictureWrap {
+    height: 40vh;
+    text-align: center;
+}
+.picture {
+    height: 100%;   
+}
+.backBtn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6rem;
+    left: 2rem;
+    border-radius: 50%;
+     box-shadow: 0px 0px 5px gray;
+    width: 3rem;
+    height: 3rem;
+}
+.slidePicWrap {
+    height: 10vh;
+    padding: 1rem;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.slidePic {
+    height: 100%;
+}
+.slider {
+    background: rgb(225, 224, 224);
+}
+.text {
+    padding: 0 1rem;
 }

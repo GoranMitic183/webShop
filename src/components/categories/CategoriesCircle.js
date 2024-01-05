@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./CategoriesCircle.module.css";
 
-const CategoriesCircle = ({url,text}) => {
+const CategoriesCircle = ({url}) => {
   return (
       <div className={classes.wraper}>
         <img

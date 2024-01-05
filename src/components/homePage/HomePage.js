@@ -1,14 +1,14 @@
 import React from 'react'
 import Latest from '../latest/Latest'
 import Categories from '../categories/Categories'
-import ProductDetails from '../product/ProductDetails'
+import Sliders from '../../slider/Sliders'
 
 const HomePage = () => {
   return (
     <div>
         <Latest />
         <Categories />
-        <ProductDetails />
+        <Sliders />
     </div>
   )
 }

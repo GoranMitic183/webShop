@@ -4,12 +4,12 @@ import classes from "./Categories.module.css";
 
 const Categories = () => {
   return (
-    <div>
+    <div className={classes.wraper}>
       <div>
         <h2>CATEGORIES</h2>
       </div>
-      <div className={classes.categoriesWraper}>
-        <div className={classes.wraper}>
+      <div>
+        <div>
           <CategoriesCircle
             url="https://media.boohoo.com/i/boohoo/amm07233_black_xl/male-black-man-active-performance-muscle-fit-raglan-tee/?w=900&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit"
             text="Men's"
