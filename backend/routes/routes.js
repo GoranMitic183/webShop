@@ -1,6 +1,8 @@
-import expres from 'express';
-import { getProducts } from '../controllers/controllers';
+// const express = require("express");
+// const getProducts = require("../controllers/controllers.js");
 
-const router = expres.Router();
+// const router = express.Router();
 
-router.get('/', getProducts);
+// router.get('/', getProducts);
+
+// module.exports = router;

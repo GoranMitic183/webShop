@@ -1,14 +1,15 @@
-import Products from '../models/products';
-import mongoose from 'mongoose';
+// import Product from '../models/products.js';
+const Product = require("../models/products.js");
 
 export const getProducts = async (req, res) => {
     try {
-        const products = await Products.find();
+        const products = await Product.find({});
         if(products.length === 0){
-            return res.json({status:"error", message:"Can't find any data!"})
+            return res.status(404).json({status:"error", message:"No data found!"})
         }
         return res.status(200).json({status: "ok", data: products})
     } catch (error) {
-        res.status(404).json({ message: "Something went wrong!"})
+        console.error("Error fetching products:", error);
+        res.status(500).json({ status: "error", message: "Something went wrong!"})
     }
 }

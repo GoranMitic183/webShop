@@ -3,11 +3,13 @@ import classes from './ProductDetails.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
 
 const navigate = useNavigate();
-
+  const products = useLoaderData();
+  console.log(products);
 const handleBack = () => {
   navigate(-1)
 }

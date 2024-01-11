@@ -10,7 +10,7 @@ const productSchema = new Schema(
         img: { type: String, required: true },
         rating: { type:Number, required: true },
     },
-    { collection: "products"}
+    { collection: "supplements"}
 );
 
 const Product = mongoose.model("productSchema", productSchema);
