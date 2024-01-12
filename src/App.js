@@ -5,6 +5,7 @@ import CategoriePage from "./components/categories/CategoriePage";
 import ProductDetails from "./components/product/ProductDetails";
 import ErrorPage from "./components/error/errorPage";
 
+
 const router = createBrowserRouter([
   {
     path: '/',

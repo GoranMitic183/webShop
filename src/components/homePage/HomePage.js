@@ -11,8 +11,9 @@ import { useDispatch } from "react-redux"
 const HomePage = () => {
 
   const products = useLoaderData();
-
-
+  console.log(products);
+  const dispatch = useDispatch();
+  dispatch(setProducts(products));
 
   return (
     <div>
@@ -28,9 +29,7 @@ export default HomePage;
 export async function loader() {
     try {
       const products = await API.getProducts();
-      const dispatch = useDispatch();
 
-      dispatch(setProducts(products))
       return products;
     } catch (error) {
         console.error("Error fetching products:", error);

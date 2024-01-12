@@ -1,15 +1,17 @@
-import React from "react";
+import React from "react"
 import classes from './ProductDetails.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { useNavigate } from "react-router-dom";
-import { useLoaderData } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 const ProductDetails = () => {
 
 const navigate = useNavigate();
-  const products = useLoaderData();
-  console.log(products);
+const { products } = useSelector((state) => (state.products));
+const productID = useParams().id;
+const product = products.find((product) => product._id === productID);
+
 const handleBack = () => {
   navigate(-1)
 }
@@ -20,7 +22,7 @@ const handleBack = () => {
         <FontAwesomeIcon icon={faArrowLeft} />
       </btn>
       <div className={classes.pictureWrap}>
-        <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71QDGZq3BJL._AC_UF1000,1000_QL80_.jpg" alt="pictures" className={classes.picture}></img>
+        <img src={product.img} alt="pictures" className={classes.picture}></img>
       </div>
 
       <div className={classes.slider}>
@@ -32,11 +34,11 @@ const handleBack = () => {
       <div className={classes.text}>
       <div>
         <div>
-          <h2>Active Pharma Creatine</h2>
-          <p>3.499 RSD</p>
+          <h2>{product.productName +" " + product.type}</h2>
+          <p>{product.price + " RSD"}</p>
         </div>
         <div>
-          <p>text</p>
+          <p>{product.description}</p>
         </div>
       </div>
 
