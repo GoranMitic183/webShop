@@ -2,12 +2,17 @@ import React from "react";
 import CategoriesCircle from "./CategoriesCircle";
 import classes from "./Categories.module.css";
 
-const Categories = () => {
+const Categories = (props) => {
+
+  const categoryName = Object.keys(props.data)[3];
+  const category = Object.values(props.data)[3];
+  console.log(category);
+
   return (
     <div className={classes.wraper}>
-      <div>
+      {/* <div>
         <h2>CATEGORIES</h2>
-      </div>
+      </div> */}
       <div>
         <div>
           <CategoriesCircle
@@ -15,7 +20,7 @@ const Categories = () => {
             text="Men's"
           />
           <div className={classes.text}>
-          <h3>Men's</h3>
+          <h3>{categoryName.toUpperCase()}</h3>
           </div>
         </div>
       </div>

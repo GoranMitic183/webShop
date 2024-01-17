@@ -1,7 +1,7 @@
 import axios from "axios";
+// import { response } from "express";
 
 const API = axios.create({baseURL: "http://localhost:3002"});
-
 export async function getProducts () {
     try {
         const response = await API.get("/",{
@@ -19,24 +19,35 @@ export async function getProducts () {
     }
 }
 
-// export async function getProducts() {
-//     try {
-//         const response = await fetch("http://localhost:3002", {
-//             method: "GET",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//         });
+export async function getCategoriesData() {
+    try {
+        const response = await fetch("http://localhost:3002/categories",{
+            method: "GET",
+            headers: {"Content-Type": "application/json"}
+        })
+        if(response.status === 200){
+            const data = await response.json();
+            return data;
+        }
+    } catch (error) {
+        throw error;
+    }
 
-//         if (response.ok) {
-//             const data = await response.json();
-//             console.log(data);
-//             return data.data;
-//         } else {
-//             throw new Error(`Error fetching products. Status: ${response.status}`);
-//         }
-//     } catch (error) {
-//         console.error("Error fetching products:", error);
-//         throw error;
-//     }
-// }
+
+    // try {
+    //     const response = await API.get("/categories",{
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         }
+    //     });
+    //     if(response.status === 200) {
+    //         const data = response.data.data
+    //         return data;
+    //     }
+    //     // return response.data.message;
+    // } catch (error) {
+    //     console.error("Error fetching products:", error);
+    //     throw error
+    // }
+}
+

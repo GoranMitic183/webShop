@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import classes from './ProductDetails.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -11,9 +11,15 @@ const navigate = useNavigate();
 const { products } = useSelector((state) => (state.products));
 const productID = useParams().id;
 const product = products.find((product) => product._id === productID);
+const [ image, setImage ] = useState(product.img[0][1]);
+
 
 const handleBack = () => {
   navigate(-1)
+}
+
+const handleImage = (url) => {
+  setImage(url);
 }
 
   return (
@@ -22,34 +28,43 @@ const handleBack = () => {
         <FontAwesomeIcon icon={faArrowLeft} />
       </btn>
       <div className={classes.pictureWrap}>
-        <img src={product.img} alt="pictures" className={classes.picture}></img>
+        <img src={image} alt="pictures" className={classes.picture}></img>
       </div>
 
       <div className={classes.slider}>
       <div className={classes.slidePicWrap}>
-        <img src="https://fitlab.rs/wp-content/uploads/2022/09/gold-standard-whey-fitlab-suplementi.jpg" alt="" className={classes.slidePic}></img>
+        {product.img.map((img) => {
+          const url = Object.values(img)[0];
+          return (
+            <img src={url} alt="img" className={classes.detailImg} onClick={() => handleImage(url)}
+            key={url}></img>
+          )
+        })}
       </div>
       </div>
       
-      <div className={classes.text}>
       <div>
-        <div>
-          <h2>{product.productName +" " + product.type}</h2>
-          <p>{product.price + " RSD"}</p>
+      <div className={classes.text}>
+        <div className={classes.infoWraper}>
+          <h2>{product.productName +" " + product.type}<br />{product.weight + "g"}</h2>
+          <h1 className={classes.price}>{product.price + " RSD"}</h1>
         </div>
         <div>
           <p>{product.description}</p>
         </div>
       </div>
 
-      <div>
+      <div className={classes.rateing}>
         <div>
           <p>Ratings and comentars</p>
           <p>No comments for now</p>
         </div>
-        <div>
-          <btn>Rate</btn>
+        <div className={classes.btnWraper}>
+          <btn className={classes.rateBtn}>Rate</btn>
         </div>
+        {/* <div>
+          <btn>{product.rating}</btn>
+        </div> */}
       </div>
       </div>
       

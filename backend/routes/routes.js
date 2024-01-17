@@ -5,4 +5,4 @@
 
 // router.get('/', getProducts);
 
-// module.exports = router;
+// export default router;

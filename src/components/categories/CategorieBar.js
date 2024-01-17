@@ -2,14 +2,18 @@ import React from 'react'
 import CategoriesCircle from './CategoriesCircle'
 import classes from './CategorieBar.module.css'
 
-const CategorieBar = ({url}) => {
+const CategorieBar = (props) => {
+
+  const categoryName = Object.keys(props.data)[3];
+  const category = Object.values(props.data)[3];
+
   return (
         <div className={classes.wraper}>
         <div className={classes.text}>
-        <h2>Men's</h2>
+        <h2>{categoryName.toUpperCase()}</h2>
         </div>
         <div className={classes.circle}>
-            <CategoriesCircle url={'https://t3.ftcdn.net/jpg/01/75/28/80/360_F_175288014_3NkoGQr8OwuRfBwhznQIqPVeuDAsxzuq.jpg'}/>
+            <CategoriesCircle url={category[0].img[0][1]}/>
         </div>
     </div>    
   )

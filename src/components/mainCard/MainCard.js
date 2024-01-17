@@ -5,11 +5,12 @@ import classes from './MainCard.module.css'
 import { Link } from "react-router-dom";
 
 const MainCard = ({product}) => {
+  console.log(Object.values(product.img)[0][1]);
 
   return (
       <div className={classes.card}>
       <Link to={`/product/${product._id}`} className={classes.wraper}>
-        <img src={product.img} alt="slika" className={classes.cover}></img>
+        <img src={Object.values(product.img)[0][1]} alt="slika" className={classes.cover}></img>
         <div className={classes.text}>
         <h2>{product.productName}</h2>
         <h3>{product.type}</h3>

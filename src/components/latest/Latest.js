@@ -1,11 +1,11 @@
 import React from "react";
 import MainCard from "../mainCard/MainCard";
 import classes from "./Latest.module.css";
+import { useSelector } from "react-redux";
 
-const Latest = (props) => {
+const Latest = () => {
 
-  const products = props.products;
-  console.log(props.products);
+  const { products } = useSelector((state)=>({...state.products}))
 
   return (
     <div className={classes.wraper}>
