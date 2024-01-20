@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Latest from "../latest/Latest";
 import Categories from "../categories/Categories";
 import Sliders from "../slider/Sliders";
@@ -7,29 +7,16 @@ import { useLoaderData } from "react-router-dom";
 import { setProducts } from "../../redux/features/productsSlice";
 import { useDispatch } from "react-redux";
 import { categoryData } from "../../redux/features/categorySlice";
-import { useSelector } from "react-redux";
+import classes from './HomePage.module.css';
 
 const HomePage = () => {
-  const products = useLoaderData();
+
+  const data = useLoaderData();
+  console.log(data);
+
   const dispatch = useDispatch();
-
-  dispatch(setProducts(products));
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const categories = await API.getCategoriesData();
-        console.log(categories);
-        dispatch(categoryData(categories.data));
-      } catch (error) {
-        throw error;
-      }
-    };
-    fetchCategories();
-  },[]);
-
-  const { category } = useSelector((state) => ({ ...state.category }));
-  console.log(category);
+  dispatch(setProducts(data.products));
+  dispatch(categoryData(data.categories))
 
   return (
     <div>
@@ -37,11 +24,14 @@ const HomePage = () => {
       <div>
         <h2>CATEGORIES</h2>
       </div>
-      {category.map((list) => {
+      <div className={classes.wraper}>
+      {data.categories.map((category) => {
         return(
-     <Categories data={list}/>
+     <Categories data={category} key={category._id}/>
         )
       })}
+      </div>
+      
       <Sliders />
     </div>
   );
@@ -51,11 +41,17 @@ export default HomePage;
 
 export async function loader() {
   try {
-    const products = await API.getProducts();
+    const [products, categories] = await Promise.all([
+      API.getProducts(),
+      API.getCategoriesData(),
+    ]);
 
-    return products;
+    return {
+      products,
+      categories
+    };
   } catch (error) {
-    console.error("Error fetching products:", error);
+    console.error("Error fetching data:", error);
     throw error;
   }
 }

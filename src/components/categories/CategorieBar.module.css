@@ -5,6 +5,7 @@
     height: 7rem;
     border-radius: .5rem;
     width: 90%;
+    margin: 1rem 0;
 }
 .text {
     display: flex;

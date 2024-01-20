@@ -5,6 +5,6 @@ import CategoriesReducer from "./features/categorySlice"
 export default configureStore({
     reducer: {
         products: ProductsReducer,
-        category: CategoriesReducer
+        category: CategoriesReducer,
     }
 })

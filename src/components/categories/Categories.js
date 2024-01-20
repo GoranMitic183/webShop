@@ -1,15 +1,18 @@
 import React from "react";
 import CategoriesCircle from "./CategoriesCircle";
 import classes from "./Categories.module.css";
+import { Link } from 'react-router-dom';
 
 const Categories = (props) => {
 
   const categoryName = Object.keys(props.data)[3];
   const category = Object.values(props.data)[3];
+  const categoryID = Object.values(props.data)[2]
   console.log(category);
 
+
   return (
-    <div className={classes.wraper}>
+    <Link to={`/categories/${categoryName}/${categoryID}`} className={classes.wraper}>
       {/* <div>
         <h2>CATEGORIES</h2>
       </div> */}
@@ -24,7 +27,7 @@ const Categories = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -5,7 +5,7 @@ import classes from './CategorieBar.module.css'
 const CategorieBar = (props) => {
 
   const categoryName = Object.keys(props.data)[3];
-  const category = Object.values(props.data)[3];
+  const categoryData = Object.values(props.data)[3];
 
   return (
         <div className={classes.wraper}>
@@ -13,7 +13,7 @@ const CategorieBar = (props) => {
         <h2>{categoryName.toUpperCase()}</h2>
         </div>
         <div className={classes.circle}>
-            <CategoriesCircle url={category[0].img[0][1]}/>
+            <CategoriesCircle url={categoryData[0].img[0][1]}/>
         </div>
     </div>    
   )

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import classes from './ProductDetails.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -8,10 +8,41 @@ import { useSelector } from "react-redux"
 const ProductDetails = () => {
 
 const navigate = useNavigate();
-const { products } = useSelector((state) => (state.products));
+const { products } = useSelector((state) => ({...state.products}));
+const { category } = useSelector((state) => (state.category));
+
 const productID = useParams().id;
+
 const product = products.find((product) => product._id === productID);
-const [ image, setImage ] = useState(product.img[0][1]);
+console.log(product);
+
+const categories = category.map((item)=> Object.values(item)[3].find((cate)=>cate._id === productID));
+const data = categories.find((cat)=> cat !== undefined)
+console.log(data);
+
+const [ image, setImage ] = useState();
+
+let DATA = null;
+
+// useEffect(()=>{
+
+// },[])
+
+if(product !== undefined){
+  //  const img = product.img[0][1];
+   DATA = product;
+  //  setImage(img)
+}else{
+  DATA = data;
+  // setImage(DATA.img[0][1])
+}
+
+useEffect(()=> {
+setImage(DATA.img[0][1])
+},[DATA])
+
+
+
 
 
 const handleBack = () => {
@@ -33,7 +64,7 @@ const handleImage = (url) => {
 
       <div className={classes.slider}>
       <div className={classes.slidePicWrap}>
-        {product.img.map((img) => {
+        {DATA.img.map((img) => {
           const url = Object.values(img)[0];
           return (
             <img src={url} alt="img" className={classes.detailImg} onClick={() => handleImage(url)}
@@ -46,11 +77,11 @@ const handleImage = (url) => {
       <div>
       <div className={classes.text}>
         <div className={classes.infoWraper}>
-          <h2>{product.productName +" " + product.type}<br />{product.weight + "g"}</h2>
-          <h1 className={classes.price}>{product.price + " RSD"}</h1>
+          <h2>{DATA.productName +" " + DATA.type}<br />{DATA.weight && DATA.weight + "g"}</h2>
+          <h1 className={classes.price}>{DATA.price + " RSD"}</h1>
         </div>
         <div>
-          <p>{product.description}</p>
+          <p>{DATA.description}</p>
         </div>
       </div>
 
