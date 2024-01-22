@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getCategorie } from '../../API/api';
-import MainCard from '../mainCard/MainCard';
-import classes from './Categorie.module.css';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getCategorie } from "../../API/api";
+import MainCard from "../mainCard/MainCard";
+import classes from "./Categorie.module.css";
+import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
 
 export const Categorie = () => {
   const paramsID = useParams().id;
@@ -15,7 +16,7 @@ export const Categorie = () => {
         const data = await getCategorie(paramsID);
         setCategorie(Object.values(data.data)[3]);
       } catch (error) {
-        console.error('Error fetching categorie:', error);
+        console.error("Error fetching categorie:", error);
       }
     };
 
@@ -23,11 +24,15 @@ export const Categorie = () => {
   }, [paramsID]);
 
   return (
-    <div className={classes.wraper}>
-      {categorie.map((card) => (
-        <MainCard key={card.id} product={card} />
-      ))}
-    </div>
+    <>
+      <div>
+        <Breadcrumbs />
+      </div>
+      <div className={classes.wraper}>
+        {categorie.map((card) => (
+          <MainCard key={card.id} product={card} />
+        ))}
+      </div>
+    </>
   );
 };
-

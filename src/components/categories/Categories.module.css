@@ -1,7 +1,11 @@
 .text {
     width: 7rem;
     text-align: center;
+    text-decoration: none;
 }
 .wraper {
     padding: 0 1rem;
+}
+.name {
+    text-decoration: none;
 }

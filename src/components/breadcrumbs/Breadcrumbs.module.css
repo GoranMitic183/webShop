@@ -1,0 +1,30 @@
+.wraper {
+    margin: 1rem;
+}
+.wraper > *{
+    display: inline-block;
+    margin: .5rem auto;
+    cursor: pointer;
+}
+.crumb:after {
+    content: '>';
+    font-size:x-large;
+    margin: auto .5rem;
+    color: black;
+}
+.crumb:nth-child(2):after{
+    display: none;
+}
+.crumb:last-child {
+    display: none;
+}
+.link {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+.isActiveLink {
+    text-decoration: none;
+    color: gray;
+    font-size: x-large;
+}
