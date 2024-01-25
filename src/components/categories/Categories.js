@@ -20,7 +20,7 @@ const Categories = (props) => {
             url={imgURL}
           />
           <div className={classes.text}>
-          <h3 className={classes.name}>{categoryName.toUpperCase()}</h3>
+          <h3>{categoryName.toUpperCase()}</h3>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <div>
       <Latest />
-      <div>
+      <div style={{margin:"0 1rem"}}>
         <h2>CATEGORIES</h2>
       </div>
       <div className={classes.wraper}>

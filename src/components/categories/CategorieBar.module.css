@@ -6,6 +6,8 @@
     border-radius: .5rem;
     width: 90%;
     margin: 1rem 0;
+    text-decoration: none;
+    color: black;
 }
 .text {
     display: flex;

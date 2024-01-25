@@ -8,6 +8,8 @@ import CategoriePage from "./components/categories/CategoriePage";
 import ProductDetails from "./components/product/ProductDetails";
 import ErrorPage from "./components/error/errorPage";
 import { Categorie } from "./components/categorie/Categorie";
+import { WishList } from "./components/wishList/WishList";
+import Shop from "./components/shop/Shop";
 
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "/categories/:categorie/:id",
         element: <Categorie />
+      },
+      {
+        path: "/added",
+        element: <WishList />
+      },
+      {
+        path: "/shop",
+        element: <Shop />
       }
     ],
   },
