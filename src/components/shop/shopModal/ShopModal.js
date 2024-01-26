@@ -18,11 +18,9 @@ const ShopModal = forwardRef(function Modal(props, ref) {
   });
 
   const addProduct = (size,product) => {
-    // console.log(size);
     const item = product;
     item.velicina = size;
     item.kolicina = 1;
-    console.log(item);
     dispatch(setProduct(item));
   }
 

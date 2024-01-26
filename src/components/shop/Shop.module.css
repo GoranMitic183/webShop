@@ -1,0 +1,86 @@
+.wraper {
+    margin: 1rem;
+}
+.card {
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+}
+.left {
+    display: flex;
+}
+.picture {
+    width: 22%;
+    margin: 2rem;
+    border: 1px solid gray;
+    border-radius: .5rem;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+.close {
+    border-radius: 50%;
+    border: 3px solid black;
+    font-weight: bold;
+    padding: .3rem;
+}
+.wraperCoupon {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+}
+.coupon {
+    display: flex;
+    align-items: center;
+}
+.angle {
+    display: flex;
+    align-items: center;  
+    margin-right: 2rem;
+}
+.totalWraper{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    font-size: larger;
+}
+.total {
+    font-weight: bold;
+    margin-right: 2rem;
+}
+.fade {
+    color: gray;
+    font-size: larger;
+}
+.btn {
+    font-size: larger;
+    color: black;
+    font-weight: bold;
+    margin: 0 1rem;
+}
+.wraperTaster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px gray;
+}
+.taster {
+    width: 10rem;
+    border-radius: .5rem;
+    border-color: black;
+    border: 3px solid ;
+    padding: 1rem 3rem;
+    margin: 1rem 0;
+    font-size: larger;
+    color: white;
+    background: black;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
