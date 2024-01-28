@@ -1,0 +1,23 @@
+.wraper {
+    background-color: white;
+    border-radius: 1rem;
+    border-color: white;
+    width: 100%;
+    bottom: 0;
+}
+.list{
+    text-decoration: none;
+}
+.segment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: larger;
+    cursor: pointer;
+}
+.close{
+    font-size: larger;
+    margin: 1rem;
+    position: absolute;
+    right: 1rem;
+}

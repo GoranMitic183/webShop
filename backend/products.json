@@ -13,6 +13,7 @@
             { "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"},
             { "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"}
         ],
+        "kolicina": 9,
         "rating": "4.8"
     },
     {
@@ -29,6 +30,7 @@
             { "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"},
             { "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"}
         ],
+        "kolicina": 13,
         "rating": "4.1"
     },
     {
@@ -45,6 +47,7 @@
             { "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"},
             { "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"}
         ],
+        "kolicina": 16,
         "rating": "4.5"
     },
     {
@@ -61,6 +64,7 @@
             { "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"},
             { "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"}
         ],
+        "kolicina": 6,
         "rating": "3.9"
     }
 ]

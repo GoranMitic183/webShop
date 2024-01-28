@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setWishList, removeWishList } from "../../redux/features/wishSlice";
 import { useState } from "react";
 import ShopModal from "../shop/shopModal/ShopModal";
+import { setProduct } from "../../redux/features/shopSlice";
 
 const MainCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -24,8 +25,13 @@ const MainCard = ({ product }) => {
     dispatch(removeWishList(id));
   }
 
-  const handleShop = () => {
-    modal.current.open();
+  const handleShop = (product) => {
+    if(product.velicina){
+      modal.current.open();
+    }else{
+      let data = {...product,kolicina: 1}
+      dispatch(setProduct(data))
+    }
   };
 
   return (
@@ -56,7 +62,7 @@ const MainCard = ({ product }) => {
         >
           <FontAwesomeIcon icon={faHeart} />
         </div>
-        <div className={classes.shop} onClick={handleShop}>
+        <div className={classes.shop} onClick={()=>handleShop(product)}>
           <FontAwesomeIcon icon={faBagShopping} inverse />
         </div>
       </div>

@@ -83,4 +83,13 @@
     cursor: pointer;
     font-weight: bold;
 }
+.emptyWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.shopingCart {
+    width: 5rem;
+}
 
