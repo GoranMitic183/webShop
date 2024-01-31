@@ -10,7 +10,7 @@ const NavigationBar = () => {
           <NavigationDiv icon={faList} text="Categories"/>
           <NavigationDiv icon={faHeart} text="Added"/>
           <NavigationDiv icon={faBagShopping} text="Shop"/>
-          <NavigationDiv icon={faUser} text="Profil"/>
+          <NavigationDiv icon={faUser} text="Profile"/>
     </div>
   )
 }

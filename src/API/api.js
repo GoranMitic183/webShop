@@ -2,6 +2,13 @@ import axios from "axios";
 
 const API = axios.create({baseURL: "http://localhost:3002"});
 
+API.interceptors.request.use((req)=>{
+    if(localStorage.getItem("user")){
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("user")).token}`
+    }
+    return req;
+})
+
 export async function getProducts () {
     try {
         const response = await API.get("/",{
@@ -48,4 +55,49 @@ export async function getCategoriesData() {
         throw error;
     }
 }
+
+export async function register(data) {
+    try {
+        const response = await fetch("http://localhost:3002/register",{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        })
+        if(response.ok){
+            const data = await response.json();
+            console.log(data);
+            localStorage.setItem('token', JSON.stringify({ user:data.user, token:data.token, role:data.role}))
+            console.log(data);
+            return data;
+        }else {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+           
+    } catch (error) {
+        throw error;
+    }
+}
+
+export async function login(data) {
+    try {
+        const response = await fetch("http://localhost:3002/login",{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        })
+        if(response.ok){
+            const data = await response.json();
+            localStorage.setItem('token', JSON.stringify({user:data.result, token:data.token, role:data.role}))
+            console.log(data);
+            return data;
+        }else {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+           
+    } catch (error) {
+        throw error;
+    }
+}
+
+
 

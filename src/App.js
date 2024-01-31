@@ -10,8 +10,10 @@ import ErrorPage from "./components/error/errorPage";
 import { Categorie } from "./components/categorie/Categorie";
 import { WishList } from "./components/wishList/WishList";
 import Shop from "./components/shop/Shop";
+import Profile from "./components/profile/Profile"
+import Register from "./components/profile/Register"
+import Login from "./components/profile/Login";
 
-// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
   {
@@ -43,18 +45,27 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />
+      },
+      {
+        path: "/profile",
+        element: <Profile/>
+      },
+      {
+        path: "/register",
+        element: <Register />
+      },
+      {
+        path: "/login",
+        element: <Login />
       }
     ],
   },
 ]);
 
-// const queryClient = new QueryClient();
 
 function App() {
   return (
-    // <QueryClientProvider client={queryClient}>
       <RouterProvider router={router}></RouterProvider>
-    // </QueryClientProvider>
   );
 }
 

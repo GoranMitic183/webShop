@@ -9,12 +9,12 @@ export const WishList = () => {
     const { wishList } = useSelector((state) => ({ ...state.wishList }));
     const navigate = useNavigate();
 
-
 const navigateShop = () => {
   navigate("/")
 }
 
     const empty = <div>
+
       <h2 style={{textAlign: "center"}}>
         No products in Wish List
       </h2>
@@ -34,7 +34,7 @@ const navigateShop = () => {
     <div className={classes.wraper}>
         {wishList.map((product)=>{
             return (
-                <MainCard  product={product} key={product._id}/>
+                 <MainCard  product={product} key={product._id}/>             
             )
         })}
     </div>

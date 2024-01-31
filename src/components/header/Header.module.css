@@ -1,7 +1,7 @@
 .header {
     border-bottom: 1px solid gray;
     height: 3rem;
-    position:sticky;
+    position: sticky;
     top: 0rem;
     background: white;
 }

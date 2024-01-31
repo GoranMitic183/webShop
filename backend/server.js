@@ -2,8 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const JWT_SECRET = "laksndsfoihLKHDSGGNOI@LK#J2o32jrnwesdajsnkvsd";
+
 let Product = require("./models/products");
 let ProductModel = require("./models/categories");
+let User = require("./models/user");
+
 require('dotenv').config(); 
 
 
@@ -72,6 +78,67 @@ app.get('/categories/:categorie/:id', async (req, res) => {
     res.status(500).json({ status: "error", message: "Something went wrong!"})
   }
 })
+
+app.post("/register", async (req, res) => {
+  const { username, email, password } = req.body;
+
+  if (!username) {
+    return res.json({ status: "error", error: "Invalid username" });
+  }
+  if (!email) {
+    return res.json({ status: "error", error: "Invalid email" });
+  }
+  if (password.length < 8) {
+    return res.json({ status: "error", error: "Invalid password" });
+  }
+
+  const oldUser = await User.findOne({ email });
+
+  if (oldUser) {
+    return res.status(400).json({ message: "User already exists" });
+  }
+
+  try {
+    const hpassword = await bcrypt.hash(password, 10);
+
+  const user = await User.create({ username, hpassword, email});
+  console.log("User is created: ", user);
+
+  const token = jwt.sign({ email: user.email, id: user._id }, JWT_SECRET, {
+    expiresIn: "1h",
+  });
+
+  return res.status(200).json({ user: user, token: token, role: user.role });
+  } catch (error) {
+    res.status(500).json({ status: "error", error: "Failed to register!" });
+    console.log(error);
+  }
+})
+
+
+app.post("/login" , async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const oldUser = await User.findOne({ email });
+    if (!oldUser)
+      return res.status(404).json({ message: "User doesn't exist" });
+
+    const isPasswordCorrect = await bcrypt.compare(password, oldUser.hpassword);
+
+    if (!isPasswordCorrect)
+      return res.status(400).json({ message: "Invalid credentials" });
+
+    const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    res.status(200).json({ result: oldUser, token });
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong" });
+    console.log(error);
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

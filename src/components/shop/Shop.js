@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { removeProduct } from "../../redux/features/shopSlice";
+import { addProduct, removeProduct, decrementProduct } from "../../redux/features/shopSlice";
 
 const Shop = () => {
   const { products } = useSelector((state) => ({ ...state.shopData }));
@@ -27,6 +27,14 @@ const Shop = () => {
 
   function handleRemove(id) {
     dispatch(removeProduct(id));
+  }
+
+  function handleAddProduct(id) {
+    dispatch(addProduct(id))
+  }
+
+  function handleDecrementProduct(id) {
+    dispatch(decrementProduct(id))
   }
 
   return (
@@ -55,9 +63,9 @@ const Shop = () => {
                     )}
 
                     <div className={classes.fade}>
-                      Quantity <btn className={classes.btn}>-</btn>
+                      Quantity <btn className={classes.btn} onClick={()=>handleDecrementProduct(product._id)}>-</btn>
                       {product.kolicina}
-                      <btn className={classes.btn}>+</btn>
+                      <btn className={classes.btn} onClick={()=>handleAddProduct(product._id)}>+</btn>
                     </div>
                   </div>
                 </div>

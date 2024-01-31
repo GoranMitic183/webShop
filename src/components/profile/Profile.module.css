@@ -1,0 +1,13 @@
+.wraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.tasters {
+    display: flex;
+    justify-content: space-around;
+}
+.btn {
+    cursor: pointer;
+}

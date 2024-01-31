@@ -21,11 +21,44 @@ const shopSlice = createSlice({
     },
     removeProduct: (state, action) => {
         const id = action.payload;
-       state.products = state.products.filter((product)=>product._id !== id);
-    //    state.products = [...state.products, filteredProducts]
+       state.products = state.products.filter((product) => product._id !== id);
   }, 
+  addProduct: (state, action) => {
+    const id = action.payload;
+    const updatedProducts = state.products.map(product => {
+        if (product._id === id) {
+            return {
+                ...product,
+                kolicina: product.kolicina + 1
+            };
+        }
+        return product;
+    });
+
+    return {
+        ...state,
+        products: updatedProducts
+    };
+  },
+  decrementProduct: (state, action) => {
+    const id = action.payload;
+    const updatedProducts = state.products.map(product => {
+      if (product._id === id) {
+          return {
+              ...product,
+              kolicina: product.kolicina - 1
+          };
+      }
+      return product;
+  }).filter(product => product.kolicina !== 0);
+
+  return {
+      ...state,
+      products: updatedProducts
+  };
+  }
   }
 });
 
-export const { setProduct, removeProduct } = shopSlice.actions;
+export const { setProduct, removeProduct, addProduct, decrementProduct } = shopSlice.actions;
 export default shopSlice.reducer;
