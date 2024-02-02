@@ -22,8 +22,12 @@ const Shop = () => {
   });
 
   const handleStartShopping = () => {
-    navigate("/");
-  };
+      navigate("/");
+      };
+  
+  const handleAccounting = () => {
+    navigate("/accounting")
+  }
 
   function handleRemove(id) {
     dispatch(removeProduct(id));
@@ -112,7 +116,7 @@ const Shop = () => {
 
       {products.length !== 0 && (
         <div className={classes.wraperTaster}>
-          <div className={classes.taster} onClick={handleStartShopping}>
+          <div className={classes.taster} onClick={handleAccounting}>
             Start shoping
           </div>
         </div>

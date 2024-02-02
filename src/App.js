@@ -13,7 +13,7 @@ import Shop from "./components/shop/Shop";
 import Profile from "./components/profile/Profile"
 import Register from "./components/profile/Register"
 import Login from "./components/profile/Login";
-
+import Accounting from "./components/accounting/Accounting";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />
+      },
+      {
+        path: "/accounting",
+        element: <Accounting />
       }
     ],
   },
