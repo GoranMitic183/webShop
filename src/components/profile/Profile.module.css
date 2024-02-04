@@ -11,3 +11,23 @@
 .btn {
     cursor: pointer;
 }
+.arrow {
+    grid-area: arrow;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+.icon {
+    margin-left: 2rem;
+}
+.field {
+    border-top: 1px solid gray;
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    display: grid;
+    grid-template: 
+    'icon text empty empty arrow';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+}

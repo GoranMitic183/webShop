@@ -21,3 +21,12 @@
     position: absolute;
     right: 1rem;
 }
+.icon {
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 5px gray;
+    text-decoration: none;
+}
+.links {
+    text-decoration: none;
+}

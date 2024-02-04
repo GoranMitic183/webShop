@@ -139,6 +139,21 @@ app.post("/login" , async (req, res) => {
   }
 });
 
+app.delete("/removeUser", async (req, res) => {
+  const {id} = req.body;
+  console.log(id);
+  try {
+    const user = await User.findByIdAndDelete(id);
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json({ message: "User removed successfully" });
+} catch (error) {
+    console.error("Error removing user:", error);
+    res.status(500).json({ message: "Internal server error" });
+}
+})
+
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

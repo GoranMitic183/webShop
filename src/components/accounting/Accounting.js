@@ -2,8 +2,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import classes from "./Accounting.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Accounting = () => {
+
+  const navigate = useNavigate();
 
   const { products } = useSelector((state) => ({ ...state.shopData }));
   let total = 0;
@@ -17,6 +21,10 @@ const Accounting = () => {
     shiping = 400
   }
   console.log(products);
+
+  const handleNext = () => {
+    navigate("/form")
+  }
 
   return (
     <div>
@@ -49,7 +57,7 @@ const Accounting = () => {
           <p>Get free shipping on purchases over 5.000RSD</p>
         </div>
       </div>
-      <div>Next</div>
+      <div className={classes.taster} onClick={handleNext}>Next</div>
     </div>
   );
 };

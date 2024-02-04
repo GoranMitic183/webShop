@@ -30,7 +30,8 @@
             "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
           }
         ],
-        "rate": "4.2"
+        "rate": "4.2",
+        "discount" : 0
       },
       {
         "_id": "2",
@@ -61,7 +62,9 @@
             "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
           }
         ],
-        "rate": "4.2"
+        "rate": "4.2",
+        "discount" : 10
+
       }
     ]
   },
@@ -96,7 +99,9 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2"
+            "rate": "4.2",
+            "discount" : 10
+
           },
           {
             "_id": "4",
@@ -127,7 +132,9 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2"
+            "rate": "4.2",
+            "discount" : 10
+
           }
       ]
   },
@@ -162,7 +169,9 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2"
+            "rate": "4.2",
+            "discount" : 20
+
           },
           {
             "_id": "6",
@@ -193,7 +202,9 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2"
+            "rate": "4.2",
+            "discount" : 0
+
           }
       ]
   }

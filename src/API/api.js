@@ -99,5 +99,29 @@ export async function login(data) {
     }
 }
 
+export async function removeUser(id){
+    console.log(JSON.stringify(id));
+    try {
+        const response = await API.delete("/removeUser", {
+            headers: {"Content-Type": "application/json"},
+            data: {id},
+        })
+        if (response.status === 200) {
+            const data = response.data;
+            if (data.message === "User removed successfully") {
+                console.log("User removed successfully");
+            } else {
+                console.warn("Unexpected success response:", data);
+            }
+        } else {
+            const errorData = response.data.message;
+            throw new Error(errorData.message || "Failed to remove user");
+        }
+    } catch (error) {
+        console.error("Failed to remove user:", error);
+        throw error; 
+    }
+}
+
 
 
