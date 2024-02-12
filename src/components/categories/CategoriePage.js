@@ -22,19 +22,22 @@ const [sorted , setSorted ] = useState([]);
   useEffect(() => {
     let sortedProducts = products;
     
-    if ( sort !== 0) {
-      sortedProducts.flat();
+    if (sort !== 0) {
+     const flaten =  sortedProducts.flat();
       switch (sort) {
         case 5:
-          sortedProducts.sort((a, b) => a.price - b.price);
+          flaten.sort((a, b) => a.price - b.price);
           break;
         case 4:
-          sortedProducts.sort((a, b) => b.price - a.price);
+          flaten.sort((a, b) => b.price - a.price);
           break;
+          case 2: 
+          flaten.sort((a, b)=> a.rate - b.rate);
+          break; 
         default:
           break;
       }
-      setSorted(sortedProducts);
+      setSorted(flaten);
     } else {
       setSorted([]);
     }
@@ -65,13 +68,20 @@ const [sorted , setSorted ] = useState([]);
         {category && !products && category.map((category) => {
           return <CategorieBar data={category} />;
         })}
-        {products !== null && products.length > 0 &&
-          products.map((product) => (
-            
+        {products !== null && products.length > 0 && sorted.length === 0 &&
+          products.flat().map((product) => (
             <div className={classes.mainWrapper} key={product._id}>
               <MainCard product={product} />
             </div>
           ))
+        }
+        {sorted.length > 0 &&
+          sorted.map((product)=> {
+            return (
+            <div className={classes.mainWrapper} key={product._id}>
+            <MainCard product={product} />
+          </div>)
+          })
         }
       </div>
 

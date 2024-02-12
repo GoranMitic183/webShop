@@ -75,5 +75,24 @@
     padding: 1rem 3rem;
     font-size: larger;
 }
-.btnWraper {
+.rateWrapper {
+    display: flex;
+    width: 95vw;
+    justify-content: space-between;
+    /* margin-bottom: 1rem; */
+}
+.elementWrapper {
+    display: flex;
+    align-items: center;
+}
+.rate {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-right: 1rem;
+}
+.comments {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
 }
