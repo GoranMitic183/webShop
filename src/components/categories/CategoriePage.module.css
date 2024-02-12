@@ -1,3 +1,34 @@
+.container {
+    margin: 1rem;
+}
 .wraper {
     margin: 1rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.mainWrapper {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.results {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.close {
+    color: white;
+    background-color: gray;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 1rem;
+    position: absolute;
+    right: 0rem;
 }

@@ -19,7 +19,7 @@ const HomePage = () => {
   dispatch(categoryData(data.categories))
 
   return (
-    <div>
+    <div style={{marginBottom: "4rem"}}>
       <Latest />
       <div style={{margin:"0 1rem"}}>
         <h2>CATEGORIES</h2>

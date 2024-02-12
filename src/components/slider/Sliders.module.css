@@ -1,0 +1,24 @@
+.wrapper {
+    position: relative;
+}
+.leftArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 45px;
+    color: gray;
+    z-index: 1;
+    cursor: pointer;
+}
+.rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 32px;
+    font-size: 45px;
+    color: gray;
+    
+    z-index: 1;
+    cursor: pointer;
+}

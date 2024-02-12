@@ -1,0 +1,25 @@
+.wraper {
+    background-color: white;
+    border-radius: 1rem;
+    border-color: white;
+    width: 100%;
+    bottom: 0;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+}
+.list {
+    text-decoration: none;
+    list-style: none;
+}
+.sortList:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+.gray {
+    background-color: gray;
+    cursor: pointer;
+}

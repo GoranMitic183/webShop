@@ -3,6 +3,7 @@ import ProductsReducer from "./features/productsSlice"
 import CategoriesReducer from "./features/categorySlice"
 import WishListReducer from "./features/wishSlice"
 import ShopReducer from './features/shopSlice'
+import SearchReducer from './features/searchSlice'
 
 export default configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
         category: CategoriesReducer,
         wishList: WishListReducer,
         shopData: ShopReducer,
+        searchData: SearchReducer,
     }
 })

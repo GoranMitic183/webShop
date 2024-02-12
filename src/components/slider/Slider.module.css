@@ -12,6 +12,8 @@
     border-radius: .5rem;
     box-shadow: 0px 0px 5px gray;
     overflow: hidden;
+    text-decoration: none;
+    color: black;
 }
 .cover {
     display: flex;
@@ -42,8 +44,8 @@
 }
 .tag {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: .5rem;
+    right: .5rem;
 }
 .bag {
     position: absolute;

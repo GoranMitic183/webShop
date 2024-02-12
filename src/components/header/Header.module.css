@@ -4,6 +4,15 @@
     position: sticky;
     top: 0rem;
     background: white;
+    display: flex;
+    align-items: center;
+}
+.center {
+    border-bottom: 1px solid gray;
+    height: 3rem;
+    position: sticky;
+    top: 0rem;
+    background: white;
 }
 .text {
     margin-left: 5rem;
@@ -12,4 +21,9 @@
 .head {
     font-style: italic;
     text-align: center;
+}
+.sort {
+    position: absolute;
+    right: 0;
+    margin-right: 1rem;
 }
