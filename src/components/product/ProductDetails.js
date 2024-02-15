@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./ProductDetails.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faArrowLeft, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -10,16 +10,18 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const { products } = useSelector((state) => ({ ...state.products }));
   const { category } = useSelector((state) => state.category);
-  const [starNum, setStarNum] = useState(0);
+  const [ starNum, setStarNum ] = useState(0);
+  const [ show, setShow ] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("token"));
+  // const name = user.user.username;
+
   let token;
   if (user) {
     token = user.token;
   }
 
   console.log(products);
-
   console.log(token);
 
   const productID = useParams().id;
@@ -44,6 +46,7 @@ const ProductDetails = () => {
   }
 
   console.log(DATA._id);
+  const comments = DATA.comments;
 
   const average = DATA.rate.reduce((acc,current)=> acc + current,0) / DATA.rate.length;
 
@@ -66,6 +69,10 @@ const ProductDetails = () => {
 
   function handleRate(DATA) {
     navigate(`/rate/${DATA._id}`)
+  }
+
+  function handleShowComments() {
+    setShow(!show)
   }
 
   return (
@@ -142,10 +149,21 @@ const ProductDetails = () => {
                     <btn className={classes.rateBtn} onClick={() => handleRate(DATA)}>Rate</btn>
                   </div>
                 </div>
-                <div className={classes.comments}>
-                  <p style={{ marginRight: "1rem" }}>Show coments</p>
-                  <FontAwesomeIcon icon={faArrowDown} size="1x" />
+                {comments.length > 0  &&  <div className={classes.comments} onClick={handleShowComments}>
+                  <p style={{ marginRight: "1rem" }}>{ !show ? "Show coments" : "Hide Coments"}</p>
+                  <FontAwesomeIcon icon={ !show ? faArrowDown : faArrowUp} size="1x" />
+                </div>}
+               {show && DATA.comments.map((comment)=>{
+                return (
+                  <div>
+                  <div>
+                   <h2>name</h2> 
+                    <p style={{color: "gray"}}>10/05/23</p>
+                    <p>{comment}</p>
+                  </div>
                 </div>
+                )
+               })  }
               </>
             )}
           </div>

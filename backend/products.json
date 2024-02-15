@@ -26,7 +26,38 @@
       }
     ],
     "kolicina": 9,
-    "rate": [4, 5, 3, 5, 3]
+    "rate": [
+      {
+        "name": "dusan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "stefan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "odlican je."
+      },
+      {
+        "name": "djole",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "dragan",
+        "stars": 4,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "jovana",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      }
+    ]
   },
   {
     "productName": "PhD",
@@ -55,7 +86,38 @@
       }
     ],
     "kolicina": 13,
-    "rate": [4, 5, 3, 5, 3]
+    "rate": [
+      {
+        "name": "dusan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "stefan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "odlican je."
+      },
+      {
+        "name": "djole",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "dragan",
+        "stars": 4,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "jovana",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      }
+    ]
   },
   {
     "productName": "Ultimate nutrition",
@@ -84,8 +146,38 @@
       }
     ],
     "kolicina": 16,
-    "rate": [4, 3, 4, 4, 3],
-    "comments": ["poruka1", "poruka2"]
+    "rate": [
+      {
+        "name": "dusan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "stefan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "odlican je."
+      },
+      {
+        "name": "djole",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "dragan",
+        "stars": 4,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "jovana",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      }
+    ]
   },
   {
     "productName": "QNT",
@@ -114,7 +206,37 @@
       }
     ],
     "kolicina": 6,
-    "rate": [5, 5, 5, 5, 3],
-    "comments": ["poruka1", "poruka2"]
+    "rate": [
+      {
+        "name": "dusan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "stefan",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "odlican je."
+      },
+      {
+        "name": "djole",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "dragan",
+        "stars": 4,
+        "date": "10/06/23",
+        "comments": "strava!"
+      },
+      {
+        "name": "jovana",
+        "stars": 5,
+        "date": "10/06/23",
+        "comments": "strava!"
+      }
+    ]
   }
 ]
