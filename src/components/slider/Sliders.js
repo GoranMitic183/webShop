@@ -7,10 +7,13 @@ import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Sliders = () => {
   const data = useLoaderData();
+  console.log(data);
   let group = [];
 
   data.categories.forEach((category) => {
-    const categoryGroups = Object.values(category)[3];
+    const categoryGroups = Object.values(category)[5];
+
+    console.log(categoryGroups);
     const discountedGroups = categoryGroups.filter(
       (group) => group.discount > 0
     );

@@ -10,12 +10,12 @@ let Product = require("./models/products");
 let ProductModel = require("./models/categories");
 let User = require("./models/user");
 
-require('dotenv').config(); 
-
+require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3002;
-const mongodbUri = process.env.MONGODB_URI || "mongodb://0.0.0.0:27017/products";
+const mongodbUri =
+  process.env.MONGODB_URI || "mongodb://0.0.0.0:27017/products";
 
 app.use(morgan("dev"));
 app.use(express.json({ limit: "30mb", extended: true }));
@@ -23,8 +23,8 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 mongoose.connect(mongodbUri, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
+  //   useNewUrlParser: true,
+  //   useUnifiedTopology: true,
 });
 
 const connection = mongoose.connection;
@@ -37,47 +37,52 @@ connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-
-app.get('/', async (req, res) => {
+app.get("/", async (req, res) => {
   try {
-      const response = await Product.find({});
-      if(response.length === 0){
-          return res.status(404).json({status:"error", message:"No data found!"})
-      }
-      return res.status(200).json({status: "ok", data: response})
+    const response = await Product.find({});
+    if (response.length === 0) {
+      return res
+        .status(404)
+        .json({ status: "error", message: "No data found!" });
+    }
+    return res.status(200).json({ status: "ok", data: response });
   } catch (error) {
-      console.error("Error fetching products:", error);
-      res.status(500).json({ status: "error", message: "Something went wrong!"})
+    console.error("Error fetching products:", error);
+    res.status(500).json({ status: "error", message: "Something went wrong!" });
   }
 });
 
-app.get('/categories', async (req, res) => {
+app.get("/categories", async (req, res) => {
   try {
     const response = await ProductModel.find({});
-    if(response.length === 0){
-      return res.status(404).json({status:"error", message:"No data found!"})
-  }
-  return res.status(200).json({status: "ok", data: response})
+    if (response.length === 0) {
+      return res
+        .status(404)
+        .json({ status: "error", message: "No data found!" });
+    }
+    return res.status(200).json({ status: "ok", data: response });
   } catch (error) {
     console.error("Error fetching products:", error);
-      res.status(500).json({ status: "error", message: "Something went wrong!"})
+    res.status(500).json({ status: "error", message: "Something went wrong!" });
   }
-})
+});
 
-app.get('/categories/:categorie/:id', async (req, res) => {
+app.get("/categories/:categorie/:id", async (req, res) => {
   const { id } = req.params;
   console.log(id);
   try {
     const response = await ProductModel.findById(id);
-    if(response.length === 0){
-      return res.status(404).json({status:"error", message:"No data found!"})
-  }
-  return res.status(200).json({status: "ok", data: response})
+    if (response.length === 0) {
+      return res
+        .status(404)
+        .json({ status: "error", message: "No data found!" });
+    }
+    return res.status(200).json({ status: "ok", data: response });
   } catch (error) {
     console.error("Error fetching products:", error);
-    res.status(500).json({ status: "error", message: "Something went wrong!"})
+    res.status(500).json({ status: "error", message: "Something went wrong!" });
   }
-})
+});
 
 app.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
@@ -101,22 +106,21 @@ app.post("/register", async (req, res) => {
   try {
     const hpassword = await bcrypt.hash(password, 10);
 
-  const user = await User.create({ username, hpassword, email});
-  console.log("User is created: ", user);
+    const user = await User.create({ username, hpassword, email });
+    console.log("User is created: ", user);
 
-  const token = jwt.sign({ email: user.email, id: user._id }, JWT_SECRET, {
-    expiresIn: "1h",
-  });
+    const token = jwt.sign({ email: user.email, id: user._id }, JWT_SECRET, {
+      expiresIn: "1h",
+    });
 
-  return res.status(200).json({ user: user, token: token, role: user.role });
+    return res.status(200).json({ user: user, token: token, role: user.role });
   } catch (error) {
     res.status(500).json({ status: "error", error: "Failed to register!" });
     console.log(error);
   }
-})
+});
 
-
-app.post("/login" , async (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const oldUser = await User.findOne({ email });
@@ -128,9 +132,13 @@ app.post("/login" , async (req, res) => {
     if (!isPasswordCorrect)
       return res.status(400).json({ message: "Invalid credentials" });
 
-    const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, JWT_SECRET, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { email: oldUser.email, id: oldUser._id },
+      JWT_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    );
 
     res.status(200).json({ result: oldUser, token });
   } catch (error) {
@@ -140,24 +148,69 @@ app.post("/login" , async (req, res) => {
 });
 
 app.delete("/removeUser", async (req, res) => {
-  const {id} = req.body;
+  const { id } = req.body;
   console.log(id);
   try {
     const user = await User.findByIdAndDelete(id);
     if (!user) {
-        return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
     res.status(200).json({ message: "User removed successfully" });
-} catch (error) {
+  } catch (error) {
     console.error("Error removing user:", error);
     res.status(500).json({ message: "Internal server error" });
-}
-})
+  }
+});
 
+app.patch("/rating/:id", async (req, res) => {
+  const { id } = req.params;
+  const { text, stars } = req.body;
+  try {
+    const product = await Product.findById(id);
+    if (!product) {
+      const category = await ProductModel.findById(id);
+      if (!category) {
+        return res
+          .status(404)
+          .json({ message: "Product or category not found" });
+      }
+
+      const updatedRateCategory = [...category.rate, stars];
+      const updatedCommentsCategory = [...category.comments, text];
+
+      const updatedProductCategory = await ProductModel.findByIdAndUpdate(id, {
+        rate: updatedRateCategory,
+        comments: updatedCommentsCategory,
+      });
+
+      if (updatedProductCategory) {
+        return res
+          .status(200)
+          .json({ message: "Success", item: updatedProductCategory });
+      }
+    } else {
+      const updatedRate = [...product.rate, stars];
+      const updatedComments = [...product.comments, text];
+
+      const updatedProduct = await Product.findByIdAndUpdate(id, {
+        rate: updatedRate,
+        comments: updatedComments,
+      });
+
+      if (updatedProduct) {
+        return res
+          .status(200)
+          .json({ message: "Success", item: updatedProduct });
+      }
+    }
+
+    return res.status(500).json({ message: "Error updating product" });
+  } catch (error) {
+    console.error("Error updating rating:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
-
-
-

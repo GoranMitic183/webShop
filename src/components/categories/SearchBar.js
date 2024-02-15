@@ -8,11 +8,10 @@ const SearchBar = ({onSearch}) => {
   const [search, setSearch] = useState(null);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     if (search !== null) {
       const filteredProducts = category.map((cat) => {
-        let products = Object.values(cat)[3];
+        let products = Object.values(cat)[4];
 
         return products.filter((product) =>
           product.description.toLowerCase().includes(search.toLowerCase())

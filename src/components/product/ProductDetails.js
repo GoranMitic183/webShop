@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import classes from "./ProductDetails.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faArrowLeft} from "@fortawesome/free-solid-svg-icons";
-import { faStar, faXmark } from "@fortawesome/free-solid-svg-icons";
-
+import { faArrowDown, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -11,13 +10,16 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const { products } = useSelector((state) => ({ ...state.products }));
   const { category } = useSelector((state) => state.category);
-  const [starNum, setStarNum ] = useState(0);
+  const [starNum, setStarNum] = useState(0);
 
   const user = JSON.parse(localStorage.getItem("token"));
   let token;
-  if(user) {
-    token = user.token
+  if (user) {
+    token = user.token;
   }
+
+  console.log(products);
+
   console.log(token);
 
   const productID = useParams().id;
@@ -25,18 +27,8 @@ const ProductDetails = () => {
   const product = products.find((product) => product._id === productID);
   console.log(product);
 
-  // useEffect(()=> {
-  //   const dec = product.rate.toString().split(".")
-  //   console.log(dec[1]);
-  //   if(dec[1] >= 5){
-  //     setStarNum(Math.ceil(product.rate))
-  //   }else {
-  //     setStarNum(Math.floor(product.rate))
-  //   }
-  // },[product])
-
   const categories = category.map((item) =>
-    Object.values(item)[3].find((cate) => cate._id === productID)
+    Object.values(item)[5].find((cate) => cate._id === productID)
   );
   const data = categories.find((cat) => cat !== undefined);
   console.log(data);
@@ -51,17 +43,18 @@ const ProductDetails = () => {
     DATA = data;
   }
 
+  console.log(DATA._id);
+
+  const average = DATA.rate.reduce((acc,current)=> acc + current,0) / DATA.rate.length;
+
   useEffect(() => {
     setImage(DATA.img[0][1]);
-
-    const dec = DATA.rate.toString().split(".")
-    console.log(dec[1]);
-    if(dec[1] >= 5){
-      setStarNum(Math.ceil(DATA.rate))
-    }else {
-      setStarNum(Math.floor(DATA.rate))
+    if (average >= 5) {
+      setStarNum(Math.ceil(average));
+    } else {
+      setStarNum(Math.floor(average));
     }
-  }, [DATA]);
+  }, [DATA, average]);
 
   const handleBack = () => {
     navigate(-1);
@@ -70,6 +63,10 @@ const ProductDetails = () => {
   const handleImage = (url) => {
     setImage(url);
   };
+
+  function handleRate(DATA) {
+    navigate(`/rate/${DATA._id}`)
+  }
 
   return (
     <div className={classes.wraper}>
@@ -114,39 +111,43 @@ const ProductDetails = () => {
 
         <div className={classes.rateing}>
           <div>
-            <p style={{fontWeight: "bold"}}>Ratings and comentars</p>
+            <p style={{ fontWeight: "bold" }}>Ratings and comentars</p>
             {!token && <p>No comments for now</p>}
-            {token && 
-            <>
-          
-            <div className={classes.rateWrapper}>
-              <div className={classes.elementWrapper}>
-
-{DATA &&               <div className={classes.rate}>{DATA.rate}</div>
-}
-              <div>
-                <div>
-                {Array.from({ length: starNum }).map((_, index) => (
-                <FontAwesomeIcon icon={faStar} key={index} style={{marginRight: ".2rem"}}/>
-              ))}
-               {Array.from({ length: 5-starNum }).map((_, index) => (
-                <FontAwesomeIcon icon={faStar} style={{color:"white"}} key={index} />
-              ))}
+            {token && (
+              <>
+                <div className={classes.rateWrapper}>
+                  <div className={classes.elementWrapper}>
+                    {DATA && <div className={classes.rate}>{average.toFixed(1)}</div>}
+                    <div>
+                      <div>
+                        {Array.from({ length: starNum }).map((_, index) => (
+                          <FontAwesomeIcon
+                            icon={faStar}
+                            key={index}
+                            style={{ marginRight: ".2rem" }}
+                          />
+                        ))}
+                        {Array.from({ length: 5 - starNum }).map((_, index) => (
+                          <FontAwesomeIcon
+                            icon={faStar}
+                            style={{ color: "white" }}
+                            key={index}
+                          />
+                        ))}
+                      </div>
+                      <div>Rate number: {DATA.rate.length}</div>
+                    </div>
+                  </div>
+                  <div className={classes.btnWraper}>
+                    <btn className={classes.rateBtn} onClick={() => handleRate(DATA)}>Rate</btn>
+                  </div>
                 </div>
-                <div>Rate number: 3</div>
-              </div>
-              </div>
-              <div className={classes.btnWraper}>
-            <btn className={classes.rateBtn}>Rate</btn>
-          </div>
-            </div>
-<div className={classes.comments} >
-<p style={{marginRight: "1rem"}}>Show coments</p>
-<FontAwesomeIcon icon={faArrowDown} size="1x"/>
-</div>
-
-          </>
-            }
+                <div className={classes.comments}>
+                  <p style={{ marginRight: "1rem" }}>Show coments</p>
+                  <FontAwesomeIcon icon={faArrowDown} size="1x" />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

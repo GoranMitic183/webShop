@@ -6,7 +6,7 @@
         "productName": "EVERYDAY Smoke Gray",
         "type": "trenerka",
         "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "price": "6.490",
         "boja": "siva",
         "velicina": ["s","m","l","xl","xxl"],
         "kolicina": "12",
@@ -30,7 +30,7 @@
             "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
           }
         ],
-        "rate": "4.2",
+        "rate": [4,5,3,5,3],
         "discount" : 0
       },
       {
@@ -62,9 +62,8 @@
             "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
           }
         ],
-        "rate": "4.2",
+        "rate": [4,4,5,4,5,3],
         "discount" : 10
-
       }
     ]
   },
@@ -99,9 +98,8 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2",
+            "rate": [4,4,5,4,5,3],
             "discount" : 10
-
           },
           {
             "_id": "4",
@@ -132,9 +130,8 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2",
+            "rate": [4,4,5,4,5,3],
             "discount" : 10
-
           }
       ]
   },
@@ -169,9 +166,8 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2",
+            "rate": [4,5,3,5,3],
             "discount" : 20
-
           },
           {
             "_id": "6",
@@ -202,9 +198,8 @@
                 "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
               }
             ],
-            "rate": "4.2",
+            "rate": [4,5,3,5,3],
             "discount" : 0
-
           }
       ]
   }

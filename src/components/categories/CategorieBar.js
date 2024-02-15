@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const CategorieBar = (props) => {
 
-  const categoryName = Object.keys(props.data)[3];
-  const categoryData = Object.values(props.data)[3];
+  const categoryName = Object.keys(props.data)[4];
+  const categoryData = Object.values(props.data)[4];
   const categoryID = props.data._id;
 
   return (

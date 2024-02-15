@@ -14,7 +14,7 @@ export const Categorie = () => {
     const fetchCategorie = async () => {
       try {
         const data = await getCategorie(paramsID);
-        setCategorie(Object.values(data.data)[3]);
+        setCategorie(Object.values(data.data)[4]);
       } catch (error) {
         console.error("Error fetching categorie:", error);
       }

@@ -43,6 +43,13 @@ const Header = () => {
 
       break;
 
+      case "/rate":
+        text = "Rate";
+        style = "head";
+        container = "center"
+
+        break;
+
     default:
       text = "GYMSTER";
       style = "text";

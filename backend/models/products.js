@@ -9,7 +9,8 @@ const productSchema = new Schema(
         price: { type: Number, required: true },
         description: { type: String, required: true},
         img: { type: Array, required: true },
-        rating: { type:Number, required: true },
+        rate: { type: Array, required: true },
+        comments: { type: Array, required: true }
     },
     { collection: "supplements"}
 );

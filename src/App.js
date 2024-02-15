@@ -15,6 +15,7 @@ import Register from "./components/profile/Register"
 import Login from "./components/profile/Login";
 import Accounting from "./components/accounting/Accounting";
 import Form from "./components/form/Form";
+import Rate from "./components/rate/Rate";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/form",
         element: <Form/>
+      },
+      {
+        path: "/rate/:id",
+        element: <Rate />
       }
     ],
   },

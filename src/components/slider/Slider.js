@@ -50,7 +50,6 @@ const Slider = ({data}) => {
         </div>
         </div>
         <ShopModal ref={modal} product={data}/>
-
     {/* </Link> */}
     </div>
     
