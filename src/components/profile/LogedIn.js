@@ -66,16 +66,16 @@ const LogedIn = () => {
             <FontAwesomeIcon icon={faArrowRight} />
             </div>          </div>
           <div className={classes.field} onClick={handleRemoveUser}>
-            <FontAwesomeIcon icon={faUserXmark} className={classes.icon}/>
+            <FontAwesomeIcon icon={faUserXmark} className={classes.icon} color="red"/>
             Delete account
             <div className={classes.arrow}>
-            <FontAwesomeIcon icon={faArrowRight} />
+            <FontAwesomeIcon icon={faArrowRight} color="red"/>
             </div>          </div>
           <div className={classes.field} onClick={handleLogOut}>
-            <FontAwesomeIcon icon={faPowerOff} className={classes.icon}/>
+            <FontAwesomeIcon icon={faPowerOff} className={classes.icon} />
             Log out
             <div className={classes.arrow}>
-            <FontAwesomeIcon icon={faArrowRight} />
+            {/* <FontAwesomeIcon icon={faArrowRight} /> */}
             </div>
           </div>
           <hr></hr>

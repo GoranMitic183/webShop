@@ -7,16 +7,12 @@
 .textWrapper {
     width: 100vw;
 }
-
-
-
-
 .backBtn {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: .7rem;
+    top: .5rem;
     left: 2rem;
     border-radius: 50%;
      box-shadow: 0px 0px 5px gray;

@@ -11,18 +11,10 @@ const productsSchema = new Schema({
   velicina: { type: [String], required: true },
   kolicina: { type: Number, required: true },
   img: [{ type: String, required: true }],
-  rate: { type: Array, required: true },
-  comments: { type: Array, required: true }
+  rate: [{ type: Array, required: true }],
+  // comments: { type: Array, required: true }
 },
 {collection: "categories"});
-
-// const categorySchema = new Schema({
-//   men: [productsSchema],
-//   women: [productsSchema],
-//   accessories: [productsSchema],
-// },
-// {collection: "categories"}
-// );
 
 const ProductModel = mongoose.model("Category", productsSchema);
 

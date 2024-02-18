@@ -4,25 +4,17 @@ import { faHeart, faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import classes from "./MainCard.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setWishList, removeWishList } from "../../redux/features/wishSlice";
-import { useState } from "react";
+import { setWishList } from "../../redux/features/wishSlice";
 import ShopModal from "../shop/shopModal/ShopModal";
 import { setProduct } from "../../redux/features/shopSlice";
 
 const MainCard = ({ product }) => {
+
   const dispatch = useDispatch();
   const modal = useRef();
 
-  const [isAdded, setIsAdded] = useState(false);
-
-  function handleLike() {
+  function handleLike(product) {
     dispatch(setWishList(product));
-    setIsAdded(!isAdded);
-  }
-
-  function handleRemoveLike(id) {
-    setIsAdded(!isAdded);
-    dispatch(removeWishList(id));
   }
 
   const handleShop = (product) => {
@@ -58,7 +50,7 @@ const MainCard = ({ product }) => {
       <div className={classes.icons}>
         <div
           className={classes.like}
-          onClick={!isAdded ? handleLike : () => handleRemoveLike(product._id)}
+          onClick={()=> handleLike(product)}
         >
           <FontAwesomeIcon icon={faHeart} />
         </div>

@@ -4,7 +4,7 @@
     /* padding: 1rem; */
 }
 .holder {
-    height: 100%;
+    height: 86vh;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
@@ -50,4 +50,5 @@
     'icon text empty empty arrow';
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
+    font-weight: 500;
 }

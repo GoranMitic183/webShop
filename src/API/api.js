@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const API = axios.create({ baseURL: "http://localhost:3002" });
 
@@ -133,7 +134,7 @@ export async function removeUser(id) {
   }
 }
 
-export async function sendMessage(id, text, stars) {
+export async function sendMessage(id, text, stars, name) {
   console.log(id);
   try {
     const response = await API.patch(
@@ -141,6 +142,7 @@ export async function sendMessage(id, text, stars) {
       {
         text,
         stars,
+        name
       },
       { headers: { "Content-type": "application/json" } }
     );
@@ -148,6 +150,7 @@ export async function sendMessage(id, text, stars) {
       const data = response.data;
       if (data.message === "Success") {
         console.log("Successfuly send message");
+        toast.success("Message successfully send.")
       } else {
         console.warn("Unexpected success response:", data);
       }

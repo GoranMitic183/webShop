@@ -64,7 +64,7 @@ const [sorted , setSorted ] = useState([]);
           </div>
         </div>
       )}
-      <div className={classes.wraper}>
+      <div className={!products && category? classes.categories : classes.wraper}>
         {category && !products && category.map((category) => {
           return <CategorieBar data={category} />;
         })}

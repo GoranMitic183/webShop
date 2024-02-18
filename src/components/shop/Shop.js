@@ -45,8 +45,6 @@ const Shop = () => {
     <>
       {products.length !== 0 && (
         <div className={classes.wraper}>
-          <h2 style={{ textAlign: "center" }}>Shop</h2>
-          <hr></hr>
           {products.map((product) => {
             return (
               <div className={classes.card}>

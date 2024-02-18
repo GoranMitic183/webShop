@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 
 const Categories = (props) => {
 
-  const categoryName = Object.keys(props.data)[5];
-  const category = Object.values(props.data)[5];
-  const categoryID = Object.values(props.data)[4];
+  console.log(props);
+
+  const categoryName = Object.keys(props.data)[4];
+  const category = Object.values(props.data)[4];
+  const categoryID = Object.values(props.data)[3];
   const imgURL = category[0].img[0][1]
   console.log(category[0].img[0][1]);
 

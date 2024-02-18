@@ -164,7 +164,7 @@ app.delete("/removeUser", async (req, res) => {
 
 app.patch("/rating/:id", async (req, res) => {
   const { id } = req.params;
-  const { text, stars } = req.body;
+  const { text, stars, name } = req.body;
   try {
     const product = await Product.findById(id);
     if (!product) {
@@ -175,12 +175,12 @@ app.patch("/rating/:id", async (req, res) => {
           .json({ message: "Product or category not found" });
       }
 
-      const updatedRateCategory = [...category.rate, stars];
-      const updatedCommentsCategory = [...category.comments, text];
+      const item = { name: name, stars: stars, date: new Date().toISOString(), comments: text}
+      console.log(item);
+      const updateCategory = [...category.rate,item];
 
       const updatedProductCategory = await ProductModel.findByIdAndUpdate(id, {
-        rate: updatedRateCategory,
-        comments: updatedCommentsCategory,
+        rate: updateCategory,
       });
 
       if (updatedProductCategory) {
@@ -189,12 +189,23 @@ app.patch("/rating/:id", async (req, res) => {
           .json({ message: "Success", item: updatedProductCategory });
       }
     } else {
-      const updatedRate = [...product.rate, stars];
-      const updatedComments = [...product.comments, text];
+      let date = new Date();
+      let month = date.getMonth() + 1; 
+      let day = date.getDate();
+      let year = date.getFullYear();
+            if (month < 10) {
+          month = '0' + month;
+      }
+      if (day < 10) {
+          day = '0' + day;
+      }
+      let formattedDate = day + '/' + month + '/' + year;
+      // new Date().toISOString()
+      const item = { name: name, stars: stars, date: formattedDate, comments: text}
+      const updateProduct = [...product.rate, item]
 
       const updatedProduct = await Product.findByIdAndUpdate(id, {
-        rate: updatedRate,
-        comments: updatedComments,
+        rate: updateProduct,
       });
 
       if (updatedProduct) {

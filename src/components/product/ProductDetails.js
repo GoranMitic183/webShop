@@ -5,6 +5,8 @@ import { faArrowDown, faArrowLeft, faArrowUp } from "@fortawesome/free-solid-svg
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
+import ShopBar from "./ShopBar";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -21,19 +23,19 @@ const ProductDetails = () => {
     token = user.token;
   }
 
-  console.log(products);
-  console.log(token);
+  // console.log(products);
+  // console.log(token);
 
   const productID = useParams().id;
 
   const product = products.find((product) => product._id === productID);
-  console.log(product);
+  // console.log(product);
 
   const categories = category.map((item) =>
-    Object.values(item)[5].find((cate) => cate._id === productID)
+    Object.values(item)[4].find((cate) => cate._id === productID)
   );
   const data = categories.find((cat) => cat !== undefined);
-  console.log(data);
+  // console.log(data);
 
   const [image, setImage] = useState();
 
@@ -45,10 +47,10 @@ const ProductDetails = () => {
     DATA = data;
   }
 
-  console.log(DATA._id);
-  const comments = DATA.comments;
+  console.log(DATA);
+  const comments = DATA.rate;
 
-  const average = DATA.rate.reduce((acc,current)=> acc + current,0) / DATA.rate.length;
+  const average = DATA.rate.reduce((acc,current)=> acc + current.stars,0) / DATA.rate.length;
 
   useEffect(() => {
     setImage(DATA.img[0][1]);
@@ -68,7 +70,11 @@ const ProductDetails = () => {
   };
 
   function handleRate(DATA) {
-    navigate(`/rate/${DATA._id}`)
+    if(token){
+      navigate(`/rate/${DATA._id}`)
+    }else{
+      toast.error("Login if you want to send message")
+    }
   }
 
   function handleShowComments() {
@@ -119,8 +125,8 @@ const ProductDetails = () => {
         <div className={classes.rateing}>
           <div>
             <p style={{ fontWeight: "bold" }}>Ratings and comentars</p>
-            {!token && <p>No comments for now</p>}
-            {token && (
+            {!DATA.rate.length > 0 && <p>No comments for now</p>}
+            {DATA.rate && (
               <>
                 <div className={classes.rateWrapper}>
                   <div className={classes.elementWrapper}>
@@ -131,7 +137,7 @@ const ProductDetails = () => {
                           <FontAwesomeIcon
                             icon={faStar}
                             key={index}
-                            style={{ marginRight: ".2rem" }}
+                            style={{ marginRight: ".2rem" , color: "gold"}}
                           />
                         ))}
                         {Array.from({ length: 5 - starNum }).map((_, index) => (
@@ -153,13 +159,29 @@ const ProductDetails = () => {
                   <p style={{ marginRight: "1rem" }}>{ !show ? "Show coments" : "Hide Coments"}</p>
                   <FontAwesomeIcon icon={ !show ? faArrowDown : faArrowUp} size="1x" />
                 </div>}
-               {show && DATA.comments.map((comment)=>{
+               {show && DATA.rate.map((comment)=>{
                 return (
                   <div>
                   <div>
-                   <h2>name</h2> 
-                    <p style={{color: "gray"}}>10/05/23</p>
-                    <p>{comment}</p>
+                    <div>
+                    <h2>{comment.name}</h2> 
+                    {Array.from({ length: comment.stars }).map((_, index) => (
+                          <FontAwesomeIcon
+                            icon={faStar}
+                            style={{ color: "gold" }}
+                            key={index}
+                          />
+                        ))}
+                         {Array.from({ length: 5 - comment.stars }).map((_, index) => (
+                          <FontAwesomeIcon
+                            icon={faStar}
+                            style={{ color: "white" }}
+                            key={index}
+                          />
+                        ))}
+                    </div>
+                    <p style={{color: "gray"}}>{comment.date}</p>
+                    <p>{comment.comments}</p>
                   </div>
                 </div>
                 )
@@ -168,6 +190,7 @@ const ProductDetails = () => {
             )}
           </div>
         </div>
+        <ShopBar product={DATA}/>
       </div>
     </div>
   );

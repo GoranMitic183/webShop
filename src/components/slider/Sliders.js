@@ -11,7 +11,7 @@ const Sliders = () => {
   let group = [];
 
   data.categories.forEach((category) => {
-    const categoryGroups = Object.values(category)[5];
+    const categoryGroups = Object.values(category)[4];
 
     console.log(categoryGroups);
     const discountedGroups = categoryGroups.filter(

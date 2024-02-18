@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export const WishList = () => {
 
     const { wishList } = useSelector((state) => ({ ...state.wishList }));
+    console.log(wishList);
     const navigate = useNavigate();
 
 const navigateShop = () => {
@@ -34,7 +35,7 @@ const navigateShop = () => {
     <div className={classes.wraper}>
         {wishList.map((product)=>{
             return (
-                 <MainCard  product={product} key={product._id}/>             
+                 <MainCard  product={product.product} like={product.like} key={product._id}/>             
             )
         })}
     </div>

@@ -13,6 +13,8 @@ const Header = () => {
   const { products } = useSelector((state) => ({ ...state.searchData }));
 
   const location = useLocation();
+  const id = location.pathname.split("/")[2];
+
   let text = "";
   let style = "text";
   let container = "";
@@ -43,7 +45,7 @@ const Header = () => {
 
       break;
 
-      case "/rate":
+      case `/rate/${id}`:
         text = "Rate";
         style = "head";
         container = "center"
