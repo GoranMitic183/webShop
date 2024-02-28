@@ -25,7 +25,7 @@ const Register = () => {
     console.log(data);
     if(data) {
       dispatch(register({data, navigate, toast}))
-
+      
     }
     register(data);
   }
@@ -45,10 +45,10 @@ const Register = () => {
         <FontAwesomeIcon icon={faArrowLeft} />
       </btn>
       <div>
-        <h1>GYMSTER</h1>
+        <h1 style={{textAlign: "center"}}>GYMSTER</h1>
         <div>
-          <h2>Create account</h2>
-          <form onSubmit={handleSubmit}>
+          <h2 style={{textAlign: "center"}}>Create account</h2>
+          <form onSubmit={handleSubmit} style={{textAlign: "center"}}>
             <div>
               <FontAwesomeIcon icon={faUser} />
               <input placeholder="User name" name="username" className={classes.field}></input>
@@ -64,12 +64,12 @@ const Register = () => {
               <input placeholder="Password" name="password" className={classes.field}></input>
             </div>
 
-            <button type="submit">Create account</button>
+            <button type="submit" className={classes.btn}>Create account</button>
           </form>
         </div>
 
-        <p>Already have account?</p>
-        <h4 onClick={handleNavigateLogin} style={{cursor: "pointer"}}>Log in</h4>
+        <p style={{textAlign: "center", color: "gray"}}>Already have account?</p>
+        <h4 onClick={handleNavigateLogin} style={{cursor: "pointer", textAlign: "center", fontSize: "large"}}>Log in</h4>
       </div>
     </div>
   );

@@ -52,6 +52,14 @@ const Header = () => {
 
         break;
 
+        case "/accounting":
+          text = "Choose a delivery method";
+          style = "head";
+          container = "center"
+
+          break;
+
+
     default:
       text = "GYMSTER";
       style = "text";

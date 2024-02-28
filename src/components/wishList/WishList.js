@@ -10,6 +10,7 @@ export const WishList = () => {
     console.log(wishList);
     const navigate = useNavigate();
 
+
 const navigateShop = () => {
   navigate("/")
 }

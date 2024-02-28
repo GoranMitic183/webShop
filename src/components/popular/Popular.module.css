@@ -10,7 +10,6 @@
     align-items: center;
     cursor: grab;
     padding: 1rem 0;
-    /* overflow: hidden; */
 }
 .mainWrapper {
      min-height: 30rem;
@@ -18,12 +17,4 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    overflow: hidden;
-}
-
-@media (min-width: 800px) {
-    .productsWraper {
-        margin: 0 10rem;
-        background-color: aqua;
-    }
 }

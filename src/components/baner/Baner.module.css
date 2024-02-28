@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    /* min-height: 50rem; */
+}
+.pic {
+    width: 100%;
+    min-height: 30rem;
+    border-radius: .5rem;
+    box-shadow: 0px 0px 5px gray;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+.text {
+    position: absolute;
+    top: 10rem;
+    left: 1rem;
+}

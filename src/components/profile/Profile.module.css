@@ -1,8 +1,8 @@
 .wraper {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    height: 80vh;
+    align-items: center; */
+    height: 90vh;
 }
 .tasters {
     display: flex;
@@ -30,4 +30,5 @@
     'icon text empty empty arrow';
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
+    margin-bottom: 6rem;
 }

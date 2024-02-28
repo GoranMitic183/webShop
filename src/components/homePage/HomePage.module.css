@@ -1,3 +1,24 @@
 .wraper {
     display: flex;
 }
+
+
+
+@media (min-width: 800px) {
+    .wraper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* .latestDiv {
+        margin: 0 10rem;
+    } */
+    .titleDiv {
+        text-align: center;
+    }
+    .sliders {
+        width: 40rem;
+        display: flex;
+        margin: 0 auto;
+    }
+}

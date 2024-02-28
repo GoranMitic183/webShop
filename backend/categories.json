@@ -388,5 +388,265 @@
         "discount": 0
       }
     ]
+  },
+  {
+    "food": [
+      {
+        "_id": "7",
+        "productName": "EVERYDAY Smoke Gray",
+        "type": "trenerka",
+        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
+        "price": "5.490",
+        "boja": "siva",
+        "velicina": ["s", "m", "l", "xl", "xxl"],
+        "kolicina": "12",
+        "img": [
+          {
+            "1": "https://gymster.rs/wp-content/uploads/2023/07/1-7.jpg"
+          },
+          {
+            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+          },
+          {
+            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+          },
+          {
+            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+          },
+          {
+            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+          },
+          {
+            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+          }
+        ],
+        "rate": [
+          {
+            "name": "dusan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "stefan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "odlican je."
+          },
+          {
+            "name": "djole",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "dragan",
+            "stars": 4,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "jovana",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          }
+        ],
+        "discount": 20
+      },
+      {
+        "_id": "8",
+        "productName": "EVERYDAY Smoke Gray",
+        "type": "trenerka",
+        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
+        "price": "5.490",
+        "boja": "siva",
+        "velicina": ["s", "m", "l", "xl", "xxl"],
+        "kolicina": "12",
+        "img": [
+          {
+            "1": "https://gymster.rs/wp-content/uploads/2024/01/1.jpg"
+          },
+          {
+            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+          },
+          {
+            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+          },
+          {
+            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+          },
+          {
+            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+          },
+          {
+            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+          }
+        ],
+        "rate": [
+          {
+            "name": "dusan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "stefan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "odlican je."
+          },
+          {
+            "name": "djole",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "dragan",
+            "stars": 4,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "jovana",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          }
+        ],
+        "discount": 0
+      }
+    ]
+  },
+  {
+    "drinks": [
+      {
+        "_id": "9",
+        "productName": "EVERYDAY Smoke Gray",
+        "type": "trenerka",
+        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
+        "price": "5.490",
+        "boja": "siva",
+        "velicina": ["s", "m", "l", "xl", "xxl"],
+        "kolicina": "12",
+        "img": [
+          {
+            "1": "https://gymster.rs/wp-content/uploads/2023/07/1-7.jpg"
+          },
+          {
+            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+          },
+          {
+            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+          },
+          {
+            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+          },
+          {
+            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+          },
+          {
+            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+          }
+        ],
+        "rate": [
+          {
+            "name": "dusan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "stefan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "odlican je."
+          },
+          {
+            "name": "djole",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "dragan",
+            "stars": 4,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "jovana",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          }
+        ],
+        "discount": 20
+      },
+      {
+        "_id": "10",
+        "productName": "EVERYDAY Smoke Gray",
+        "type": "trenerka",
+        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
+        "price": "5.490",
+        "boja": "siva",
+        "velicina": ["s", "m", "l", "xl", "xxl"],
+        "kolicina": "12",
+        "img": [
+          {
+            "1": "https://gymster.rs/wp-content/uploads/2024/01/1.jpg"
+          },
+          {
+            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+          },
+          {
+            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+          },
+          {
+            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+          },
+          {
+            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+          },
+          {
+            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+          }
+        ],
+        "rate": [
+          {
+            "name": "dusan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "stefan",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "odlican je."
+          },
+          {
+            "name": "djole",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "dragan",
+            "stars": 4,
+            "date": "10/06/23",
+            "comments": "strava!"
+          },
+          {
+            "name": "jovana",
+            "stars": 5,
+            "date": "10/06/23",
+            "comments": "strava!"
+          }
+        ],
+        "discount": 0
+      }
+    ]
   }
 ]

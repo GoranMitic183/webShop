@@ -1,60 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import MainCard from "../mainCard/MainCard";
 import classes from "./Latest.module.css";
 import { useSelector } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Latest = () => {
   const { products } = useSelector((state) => ({ ...state.products }));
 
-  let [groupIndex, setGroupIndex] = useState([0, 1]);
-  console.log(groupIndex);
+  const carousel = useRef();
+  let [width, setWidth] = useState(0);
 
-  function handleRight() {
-    setGroupIndex((prevGroupIndex) => {
-      const updatedGroupIndex = prevGroupIndex.map((index) => {
-        if (index >= products.length - 2) {
-          return index;
-        } else {
-          return index + 2;
-        }
-      });
-      return updatedGroupIndex;
-    });
-  }
+  window.addEventListener("resize", ()=> {
+    const offSet =  document.getElementById("root").offsetWidth;
+    setWidth(offSet)
+  });
 
-  function handleLeft() {
-    setGroupIndex((prevGroupIndex) => {
-      const updatedGroupIndex = prevGroupIndex.map((index) => {
-        if (index <= 1) {
-          return index;
-        } else {
-          return index - 2;
-        }
-      });
-      return updatedGroupIndex;
-    });
-  }
+  useEffect(() => {
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  }, [width]);
 
   return (
     <div className={classes.wraper}>
       <h2>LATEST</h2>
-      <div className={classes.productsWraper}>
-        <div className={classes.leftArrow} onClick={handleLeft}>
-          <FontAwesomeIcon icon={faArrowLeft} size="1x" />
-        </div>
-        {groupIndex.map((index) => {
+      <motion.div
+        ref={carousel}
+        drag="x"
+        dragConstraints={{ right: 0, left: -width }}
+        className={classes.productsWraper}
+      >
+        {products.map((index) => {
           return (
-            <div className={classes.mainWrapper}>
-              <MainCard key={index} product={products[`${index}`]} />
-            </div>
+            <motion.div className={classes.mainWrapper}>
+              <MainCard key={index} product={index} />
+            </motion.div>
           );
         })}
-        <div className={classes.rightArrow} onClick={handleRight}>
-          <FontAwesomeIcon icon={faArrowRight} size="1x" />
-        </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -162,65 +162,193 @@ app.delete("/removeUser", async (req, res) => {
   }
 });
 
+// app.patch("/rating/:id", async (req, res) => {
+//   const { id } = req.params;
+//   const { text, stars, name, categoryID } = req.body;
+
+//   let date = new Date();
+//   let month = date.getMonth() + 1; 
+//   let day = date.getDate();
+//   let year = date.getFullYear();
+//         if (month < 10) {
+//       month = '0' + month;
+//   }
+//   if (day < 10) {
+//       day = '0' + day;
+//   }
+//   let formattedDate = day + '/' + month + '/' + year;
+
+//   try {
+//     const product = await Product.findById(id);
+//     if (!product) {
+//       const category = await ProductModel.findById(categoryID);
+//       if (!category) {
+//         return res
+//           .status(404)
+//           .json({ message: "Product or category not found" });
+//       }
+
+//       const item = { name: name, stars: stars, date: formattedDate, comments: text}
+//       console.log(category);
+
+//      const real = category.filter((product)=> product._id !== id)
+
+//       const updateCategory = [...real.rate,item];
+
+//       const updatedProductCategory = await ProductModel.findByIdAndUpdate(categoryID, {
+//         rate: updateCategory,
+//       });
+
+//       if (updatedProductCategory) {
+//         return res
+//           .status(200)
+//           .json({ message: "Success", item: updatedProductCategory });
+//       }
+//     } else {
+//       const item = { name: name, stars: stars, date: formattedDate, comments: text}
+//       const updateProduct = [...product.rate, item]
+
+//       const updatedProduct = await Product.findByIdAndUpdate(id, {
+//         rate: updateProduct,
+//       });
+
+//       if (updatedProduct) {
+//         return res
+//           .status(200)
+//           .json({ message: "Success", item: updatedProduct });
+//       }
+//     }
+
+//     return res.status(500).json({ message: "Error updating product" });
+//   } catch (error) {
+//     console.error("Error updating rating:", error);
+//     return res.status(500).json({ message: "Internal server error" });
+//   }
+// });
+
+
+// app.patch("/rating/:id", async (req, res) => {
+//   const { id } = req.params;
+//   const { text, stars, name, categoryID } = req.body;
+
+//   console.log(id);
+
+//   let date = new Date();
+//   let month = date.getMonth() + 1; 
+//   let day = date.getDate();
+//   let year = date.getFullYear();
+//   if (month < 10) {
+//     month = '0' + month;
+//   }
+//   if (day < 10) {
+//     day = '0' + day;
+//   }
+//   let formattedDate = day + '/' + month + '/' + year;
+
+//   try {
+//     const product = await Product.findById(id);
+//     console.log(product);
+//     if (!product) {
+//       const categoryModel = await ProductModel.findById(categoryID);
+//       if (!categoryModel) {
+//         return res.status(404).json({ message: "Category not found" });
+//       }
+
+//       console.log(categoryModel);
+//       // Find the category within the ProductModel
+//       const categoryToUpdate = Object.values(categoryModel)[4].find(category => category._id.toString() === id);
+//       if (!categoryToUpdate) {
+//         return res.status(404).json({ message: "Product not found in the category" });
+//       }
+
+//       categoryToUpdate.rate.push({ name, stars, date: formattedDate, comments: text });
+
+//       // Update the rating of the product within the category
+//       // categoryToUpdate.forEach(product => {
+//       //   if (product._id.toString() === id) {
+//       //     product.rate.push({ name, stars, date: formattedDate, comments: text });
+//       //   }
+//       // });
+
+//       // Save the updated ProductModel
+//       const updatedProductModel = await categoryModel.save();
+
+    
+
+//       return res.status(200).json({ message: "Success", item: updatedProductModel });
+//     } else {
+//       // Update the rating of the product directly
+//       const updatedProduct = await Product.findByIdAndUpdate(id, {
+//         $push: { rate: { name, stars, date: formattedDate, comments: text } }
+//       });
+
+//       if (updatedProduct) {
+//         return res.status(200).json({ message: "Success", item: updatedProduct });
+//       }
+//     }
+
+//     return res.status(500).json({ message: "Error updating product" });
+//   } catch (error) {
+//     console.error("Error updating rating:", error);
+//     return res.status(500).json({ message: "Internal server error" });
+//   }
+// });
+
 app.patch("/rating/:id", async (req, res) => {
   const { id } = req.params;
-  const { text, stars, name } = req.body;
+  const { text, stars, name, categoryID } = req.body;
+
+  console.log(id);
+
+  let date = new Date();
+  let month = date.getMonth() + 1; 
+  let day = date.getDate();
+  let year = date.getFullYear();
+  if (month < 10) {
+    month = '0' + month;
+  }
+  if (day < 10) {
+    day = '0' + day;
+  }
+  let formattedDate = day + '/' + month + '/' + year;
+
   try {
+    const categoryModel = await ProductModel.findById(categoryID);
+    if (!categoryModel) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    // console.log(Object.values(categoryModel));
+    // Find the category within the ProductModel
+    const categoryToUpdate = Object.values(categoryModel).find(category => Object.values(category)[4].map((item)=>{return item._id === id}));
+    if (!categoryToUpdate) {
+      return res.status(404).json({ message: "Product not found in the category" });
+    }
+
+    categoryToUpdate.rate.push({ name, stars, date: formattedDate, comments: text });
+
+    // Save the updated ProductModel
+    const updatedProductModel = await categoryModel.save();
+
+    // If the product exists, update its rating directly
     const product = await Product.findById(id);
-    if (!product) {
-      const category = await ProductModel.findById(id);
-      if (!category) {
-        return res
-          .status(404)
-          .json({ message: "Product or category not found" });
-      }
-
-      const item = { name: name, stars: stars, date: new Date().toISOString(), comments: text}
-      console.log(item);
-      const updateCategory = [...category.rate,item];
-
-      const updatedProductCategory = await ProductModel.findByIdAndUpdate(id, {
-        rate: updateCategory,
-      });
-
-      if (updatedProductCategory) {
-        return res
-          .status(200)
-          .json({ message: "Success", item: updatedProductCategory });
-      }
-    } else {
-      let date = new Date();
-      let month = date.getMonth() + 1; 
-      let day = date.getDate();
-      let year = date.getFullYear();
-            if (month < 10) {
-          month = '0' + month;
-      }
-      if (day < 10) {
-          day = '0' + day;
-      }
-      let formattedDate = day + '/' + month + '/' + year;
-      // new Date().toISOString()
-      const item = { name: name, stars: stars, date: formattedDate, comments: text}
-      const updateProduct = [...product.rate, item]
-
+    if (product) {
       const updatedProduct = await Product.findByIdAndUpdate(id, {
-        rate: updateProduct,
+        $push: { rate: { name, stars, date: formattedDate, comments: text } }
       });
-
       if (updatedProduct) {
-        return res
-          .status(200)
-          .json({ message: "Success", item: updatedProduct });
+        return res.status(200).json({ message: "Success", item: updatedProduct });
       }
     }
 
-    return res.status(500).json({ message: "Error updating product" });
+    return res.status(200).json({ message: "Success", item: updatedProductModel });
   } catch (error) {
     console.error("Error updating rating:", error);
     return res.status(500).json({ message: "Internal server error" });
   }
 });
+
+
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

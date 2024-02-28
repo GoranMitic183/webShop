@@ -16,26 +16,21 @@ const ProductDetails = () => {
   const [ show, setShow ] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("token"));
-  // const name = user.user.username;
 
   let token;
   if (user) {
     token = user.token;
   }
 
-  // console.log(products);
-  // console.log(token);
-
   const productID = useParams().id;
+  const categoryID = useParams().catID;
 
   const product = products.find((product) => product._id === productID);
-  // console.log(product);
 
   const categories = category.map((item) =>
     Object.values(item)[4].find((cate) => cate._id === productID)
   );
   const data = categories.find((cat) => cat !== undefined);
-  // console.log(data);
 
   const [image, setImage] = useState();
 
@@ -47,7 +42,6 @@ const ProductDetails = () => {
     DATA = data;
   }
 
-  console.log(DATA);
   const comments = DATA.rate;
 
   const average = DATA.rate.reduce((acc,current)=> acc + current.stars,0) / DATA.rate.length;
@@ -71,7 +65,7 @@ const ProductDetails = () => {
 
   function handleRate(DATA) {
     if(token){
-      navigate(`/rate/${DATA._id}`)
+      navigate(`/rate/${DATA._id}/${categoryID}`)
     }else{
       toast.error("Login if you want to send message")
     }

@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <CategoriePage />,
       },
       {
-        path: "/product/:id",
+        path: "/product/:id/:catID",
         element: <ProductDetails />,
       },
       {
@@ -69,9 +69,9 @@ const router = createBrowserRouter([
         element: <Form/>
       },
       {
-        path: "/rate/:id",
+        path: "/rate/:id/:catID",
         element: <Rate />
-      }
+      },
     ],
   },
 ]);

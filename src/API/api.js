@@ -134,15 +134,16 @@ export async function removeUser(id) {
   }
 }
 
-export async function sendMessage(id, text, stars, name) {
-  console.log(id);
+export async function sendMessage(id, text, stars, name, categoryID) {
+  console.log(categoryID);
   try {
     const response = await API.patch(
       `/rating/${id}`,
       {
         text,
         stars,
-        name
+        name,
+        categoryID
       },
       { headers: { "Content-type": "application/json" } }
     );

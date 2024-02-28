@@ -9,12 +9,13 @@ import { sendMessage } from "../../API/api";
 const Rate = () => {
   const navigate = useNavigate();
   const productID = useParams().id;
-  console.log(productID);
+  const categoryID = useParams().catID;
+
   const [stars, setStarsNum] = useState(0);
   const [message, setMessage] = useState("");
 
-  const user = JSON.parse(localStorage.getItem("token"));
-  const name = user.user.username;
+  const token = JSON.parse(localStorage.getItem("token"));
+  const name = token.user.username;
 
   const handleBack = () => {
     navigate(-1);
@@ -24,13 +25,9 @@ const Rate = () => {
     setMessage(text);
   }
 
-  console.log(message);
-
   function handleSend() {
-    sendMessage(productID, message, stars, name);
+    sendMessage(productID, message, stars, name, categoryID);
   }
-
-  console.log(stars);
 
   return (
     <div>

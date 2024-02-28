@@ -8,7 +8,7 @@ import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
 export const Categorie = () => {
   const paramsID = useParams().id;
   const [categorie, setCategorie] = useState([]);
-  console.log(categorie);
+  console.log(paramsID);
 
   useEffect(() => {
     const fetchCategorie = async () => {
@@ -30,7 +30,7 @@ export const Categorie = () => {
       </div>
       <div className={classes.wraper}>
         {categorie.map((card) => (
-          <MainCard key={card.id} product={card} />
+          <MainCard key={card.id} product={card} id={paramsID}/>
         ))}
       </div>
     </>

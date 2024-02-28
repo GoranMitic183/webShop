@@ -12,14 +12,34 @@ import { useDispatch } from "react-redux";
 import { addProduct, removeProduct, decrementProduct } from "../../redux/features/shopSlice";
 
 const Shop = () => {
+
   const { products } = useSelector((state) => ({ ...state.shopData }));
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   let total = 0;
 
+  // const user = JSON.parse(localStorage.getItem("token"));
+
+  // console.log(user.user.email);
+
+
+  // useEffect(()=> {
+  //   if(user.user.email !== products.user ){
+  //     dispatch(clearProducts())
+  //   }
+  // },[])
+
+  console.log(products);
+
+
+if(products){
   products.map((product) => {
     return (total += +product.price * product.kolicina);
   });
+}
+  
 
   const handleStartShopping = () => {
       navigate("/");
@@ -43,7 +63,7 @@ const Shop = () => {
 
   return (
     <>
-      {products.length !== 0 && (
+      {products && products.length > 0 && (
         <div className={classes.wraper}>
           {products.map((product) => {
             return (
@@ -53,7 +73,8 @@ const Shop = () => {
                     <img
                       src={product.img[0][1]}
                       alt="pic"
-                      style={{ height: "100%" }}
+                      style={{ height: "100%", width: 
+                    "100%" }}
                     ></img>
                   </div>
                   <div>
@@ -112,7 +133,7 @@ const Shop = () => {
         </div>
       )}
 
-      {products.length !== 0 && (
+      {products.length > 0 && (
         <div className={classes.wraperTaster}>
           <div className={classes.taster} onClick={handleAccounting}>
             Start shoping

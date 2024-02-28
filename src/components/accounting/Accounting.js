@@ -26,14 +26,20 @@ const Accounting = () => {
     navigate("/form")
   }
 
+  function handleBack(){
+    navigate(-1)
+  }
+
   return (
-    <div>
-      <div>
+   
+    <>
+ <div className={classes.wrapper}>
+      <div className={classes.container}>
         <div>
-          <div>
+          <div onClick={handleBack} className={classes.back}>
             <FontAwesomeIcon icon={faArrowLeft} />
           </div>
-          <h2>Choose a delivery method</h2>
+          {/* <h2>Choose a delivery method</h2> */}
         </div>
         <div>
           <h3>Choose the delivery method for the products</h3>
@@ -44,9 +50,9 @@ const Accounting = () => {
               </p>
             )
           })}
-          <div>
-            Delivery price
-            <btn>btn</btn>
+          <div style={{display: "flex", justifyContent: "space-between"}}>
+           <p>Delivery price: {shiping}</p> 
+            <btn className={classes.dot}>.</btn>
           </div>
         </div>
         <hr></hr>
@@ -57,8 +63,13 @@ const Accounting = () => {
           <p>Get free shipping on purchases over 5.000RSD</p>
         </div>
       </div>
-      <div className={classes.taster} onClick={handleNext}>Next</div>
     </div>
+    <div className={classes.wraperTaster}>
+    <div className={classes.taster} onClick={handleNext}>Next</div>
+
+    </div>
+
+    </>
   );
 };
 

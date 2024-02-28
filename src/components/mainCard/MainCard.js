@@ -7,8 +7,11 @@ import { useDispatch } from "react-redux";
 import { setWishList } from "../../redux/features/wishSlice";
 import ShopModal from "../shop/shopModal/ShopModal";
 import { setProduct } from "../../redux/features/shopSlice";
+import toast from "react-hot-toast";
 
-const MainCard = ({ product }) => {
+const MainCard = ({ product, id }) => {
+
+  let user = JSON.parse(localStorage.getItem("token"));
 
   const dispatch = useDispatch();
   const modal = useRef();
@@ -18,11 +21,15 @@ const MainCard = ({ product }) => {
   }
 
   const handleShop = (product) => {
-    if(product.velicina){
-      modal.current.open();
-    }else{
-      let data = {...product,kolicina: 1}
-      dispatch(setProduct(data))
+    if(user){
+      if(product.velicina){
+        modal.current.open();
+      }else{
+        let data = {...product,kolicina: 1}
+        dispatch(setProduct({products: data,user: user.user.email}))
+      }
+    }else {
+      toast.error("Login if you want to start shoping!")
     }
   };
 
@@ -30,7 +37,7 @@ const MainCard = ({ product }) => {
     <div className={classes.card}>
       <ShopModal ref={modal} product={product}/>
       <Link
-        to={`/product/${product._id}`}
+        to={`/product/${product._id}/${id}`}
         className={classes.wraper}
         data={product}
       >

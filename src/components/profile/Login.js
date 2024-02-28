@@ -40,7 +40,7 @@ const Login = () => {
         <btn onClick={handleBack} className={classes.backBtn}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </btn>
-      <div>
+      <div style={{textAlign: "center"}}>
         <h1>GYMSTER</h1>
         <div>
           <form onSubmit={handleLogin}>
@@ -55,7 +55,7 @@ const Login = () => {
             </div>
             <h4>Forgot password?</h4>
 
-            <button type="submit">Log in</button>
+            <button type="submit" className={classes.login}>Log in</button>
           </form>
         </div>
 

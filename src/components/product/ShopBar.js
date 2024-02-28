@@ -10,6 +10,8 @@ import ShopModal from "../shop/shopModal/ShopModal";
 const ShopBar = ({ product }) => {
 
   console.log(product);
+  let token = JSON.parse(localStorage.getItem("token"));
+
 
   const dispatch = useDispatch();
   const modal = useRef();
@@ -23,7 +25,7 @@ const ShopBar = ({ product }) => {
       modal.current.open();
     } else {
       let data = { ...product, kolicina: 1 };
-      dispatch(setProduct(data));
+      dispatch(setProduct({products: data, user: token.user.email}));
     }
   };
 

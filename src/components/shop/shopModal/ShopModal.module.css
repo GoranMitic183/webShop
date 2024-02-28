@@ -17,9 +17,11 @@
 }
 .close{
     font-size: larger;
+    font-weight: bold;
     margin: 1rem;
     position: absolute;
     right: 1rem;
+    top: 1rem
 }
 .icon {
     border-radius: 50%;
@@ -29,4 +31,5 @@
 }
 .links {
     text-decoration: none;
+    margin: 1rem;
 }

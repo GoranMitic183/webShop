@@ -24,7 +24,6 @@ const Slider = ({data}) => {
   
   return (
     <div className={classes.mainWraper}>
-
       {/* <Link
         to={`/product/${data._id}`}
         className={classes.wraper}
@@ -36,19 +35,19 @@ const Slider = ({data}) => {
         // className={classes.wraper}
         data={data}
       >
-        <img src={data.img[0][1]} alt='pictures' className={classes.cover}></img>
+        <img src={data.img[0][1]} alt='pictures' className={classes.cover} ></img>
         </Link>
         <div className={classes.price}>
             <p className={classes.discountPrice}>{data.price + " RSD"}</p>
             <p className={classes.actualPrice}>{discount + " RSD"}</p>
         </div>
         <div className={classes.tag}>
-            <FontAwesomeIcon icon={faTag} size='3x' color='red'/>
+            <FontAwesomeIcon icon={faTag} size='4x' color='red'/>
         </div>
         <div className={classes.bag} onClick={()=>handleShop(data)}>
-            <FontAwesomeIcon icon={faBagShopping} inverse/>
+            <FontAwesomeIcon icon={faBagShopping} inverse size='3x'/>
         </div>
-        </div>
+\        </div>
         <ShopModal ref={modal} product={data}/>
     {/* </Link> */}
     </div>
