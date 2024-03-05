@@ -9,10 +9,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addProduct, removeProduct, decrementProduct } from "../../redux/features/shopSlice";
+import {
+  addProduct,
+  removeProduct,
+  decrementProduct,
+} from "../../redux/features/shopSlice";
 
 const Shop = () => {
-
   const { products } = useSelector((state) => ({ ...state.shopData }));
 
   const navigate = useNavigate();
@@ -20,45 +23,32 @@ const Shop = () => {
 
   let total = 0;
 
-  // const user = JSON.parse(localStorage.getItem("token"));
+  const user = JSON.parse(localStorage.getItem("token"));
 
-  // console.log(user.user.email);
-
-
-  // useEffect(()=> {
-  //   if(user.user.email !== products.user ){
-  //     dispatch(clearProducts())
-  //   }
-  // },[])
-
-  console.log(products);
-
-
-if(products){
-  products.map((product) => {
-    return (total += +product.price * product.kolicina);
-  });
-}
-  
+  if (products) {
+    products.map((product) => {
+      return (total += +product.price * product.kolicina);
+    });
+  }
 
   const handleStartShopping = () => {
-      navigate("/");
-      };
-  
+    navigate("/");
+  };
+
   const handleAccounting = () => {
-    navigate("/accounting")
-  }
+    navigate("/accounting");
+  };
 
   function handleRemove(id) {
     dispatch(removeProduct(id));
   }
 
   function handleAddProduct(id) {
-    dispatch(addProduct(id))
+    dispatch(addProduct(id));
   }
 
   function handleDecrementProduct(id) {
-    dispatch(decrementProduct(id))
+    dispatch(decrementProduct(id));
   }
 
   return (
@@ -73,8 +63,7 @@ if(products){
                     <img
                       src={product.img[0][1]}
                       alt="pic"
-                      style={{ height: "100%", width: 
-                    "100%" }}
+                      style={{ height: "100%", width: "100%" }}
                     ></img>
                   </div>
                   <div>
@@ -86,14 +75,30 @@ if(products){
                     )}
 
                     <div className={classes.fade}>
-                      Quantity <btn className={classes.btn} onClick={()=>handleDecrementProduct(product._id)}>-</btn>
+                      Quantity{" "}
+                      <btn
+                        className={classes.btn}
+                        onClick={() => handleDecrementProduct(product._id)}
+                      >
+                        -
+                      </btn>
                       {product.kolicina}
-                      <btn className={classes.btn} onClick={()=>handleAddProduct(product._id)}>+</btn>
+                      <btn
+                        className={classes.btn}
+                        onClick={() => handleAddProduct(product._id)}
+                      >
+                        +
+                      </btn>
                     </div>
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <btn className={classes.close} onClick={()=>handleRemove(product._id)}>X</btn>
+                  <btn
+                    className={classes.close}
+                    onClick={() => handleRemove(product._id)}
+                  >
+                    X
+                  </btn>
                   <h2>{product.price * product.kolicina + " RSD"}</h2>
                 </div>
               </div>
@@ -128,7 +133,9 @@ if(products){
             <FontAwesomeIcon icon={faCartShopping} size="5x" />
             <h2>Shop is empty</h2>
             <p>Nothing here yet. Just possibilities</p>
-            <div className={classes.taster} onClick={handleStartShopping}>Start shoping</div>
+            <div className={classes.taster} onClick={handleStartShopping}>
+              Start shoping
+            </div>
           </div>
         </div>
       )}

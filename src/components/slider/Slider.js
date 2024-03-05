@@ -31,7 +31,7 @@ const Slider = ({data}) => {
       > */}
 <div className={classes.wraper}>
 <Link
-        to={`/product/${data._id}`}
+        to={`/product/${data._id}/:id`}
         // className={classes.wraper}
         data={data}
       >

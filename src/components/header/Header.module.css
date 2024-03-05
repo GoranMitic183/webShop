@@ -6,6 +6,7 @@
     background: white;
     display: flex;
     align-items: center;
+    z-index: 99;
 }
 .center {
     border-bottom: 1px solid gray;

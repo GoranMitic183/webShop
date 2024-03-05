@@ -51,7 +51,7 @@ const Accounting = () => {
             )
           })}
           <div style={{display: "flex", justifyContent: "space-between"}}>
-           <p>Delivery price: {shiping}</p> 
+           <p>Delivery price: {shiping} RSD</p> 
             <btn className={classes.dot}>.</btn>
           </div>
         </div>

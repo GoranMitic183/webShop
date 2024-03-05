@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setWishList } from "../../redux/features/wishSlice";
 import { setProduct } from "../../redux/features/shopSlice";
 import ShopModal from "../shop/shopModal/ShopModal";
+import { toast} from "react-toastify";
 
 const ShopBar = ({ product }) => {
 
@@ -22,10 +23,14 @@ const ShopBar = ({ product }) => {
 
   const handleShop = (product) => {
     if (product.velicina) {
-      modal.current.open();
+        modal.current.open();
     } else {
       let data = { ...product, kolicina: 1 };
-      dispatch(setProduct({products: data, user: token.user.email}));
+      if(token){
+        dispatch(setProduct({products: data, user: token.user.email}));
+      }else {
+        toast.error("Login if you want to shop.")
+      }
     }
   };
 

@@ -20,7 +20,7 @@ export const register = createAsyncThunk(
   async ({ data, navigate, toast }, { rejectWithValue }) => {
     try {
       const response = await API.register(data);
-      toast.success("Register Successfully");
+      toast.success("Success!Wellcome!");
       navigate("/");
       return response.data;
     } catch (err) {

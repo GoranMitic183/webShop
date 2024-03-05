@@ -68,15 +68,13 @@ export async function register(data) {
     });
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       localStorage.setItem(
         "token",
         JSON.stringify({ user: data.user, token: data.token, role: data.role })
       );
-      console.log(data);
       return data;
     } else {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+     throw new Error(`HTTP error! Status: ${response.status}`);
     }
   } catch (error) {
     throw error;

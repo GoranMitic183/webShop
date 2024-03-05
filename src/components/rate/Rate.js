@@ -57,6 +57,7 @@ const Rate = () => {
                   size="4x"
                   style={{ color: "gold" }}
                   key={index}
+                  onClick={() => setStarsNum(index + 1)}
                 />
               ))}
             {stars > 0 &&
@@ -66,7 +67,7 @@ const Rate = () => {
                   key={index}
                   size="4x"
                   style={{ marginRight: ".2rem", color: "gray" }}
-                  onClick={() => setStarsNum(index)}
+                  onClick={() => setStarsNum(index + stars + 1)}
                 />
               ))}
           </div>

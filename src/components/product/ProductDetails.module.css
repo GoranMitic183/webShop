@@ -9,7 +9,7 @@
     height: 100%;   
 }
 .backBtn {
-    position: absolute;
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,6 +73,7 @@
     border: 3px solid ;
     padding: 1rem 3rem;
     font-size: larger;
+    cursor: pointer;
 }
 .rateWrapper {
     display: flex;
@@ -95,4 +96,5 @@
     width: 100%;
     justify-content: flex-end;
     cursor: pointer;
+    margin-bottom: 1rem;
 }

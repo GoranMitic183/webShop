@@ -21,3 +21,10 @@
     top: 10rem;
     left: 1rem;
 }
+
+@media (min-width: 800px) {
+    .wrapper {
+        max-width: 60vw;
+        margin: 0 auto;
+    }
+}

@@ -56,7 +56,7 @@ const LogedIn = () => {
           </div>
           <h3>{data.user.email}</h3>
         </div>
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", position: "sticky", bottom: "4rem" , background: "white"}}>
           <div className={classes.field}>
             <FontAwesomeIcon
               icon={faClockRotateLeft}

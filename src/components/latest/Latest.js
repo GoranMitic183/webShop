@@ -10,9 +10,9 @@ const Latest = () => {
   const carousel = useRef();
   let [width, setWidth] = useState(0);
 
-  window.addEventListener("resize", ()=> {
-    const offSet =  document.getElementById("root").offsetWidth;
-    setWidth(offSet)
+  window.addEventListener("resize", () => {
+    const offSet = document.getElementById("root").offsetWidth;
+    setWidth(offSet);
   });
 
   useEffect(() => {
@@ -22,20 +22,22 @@ const Latest = () => {
   return (
     <div className={classes.wraper}>
       <h2>LATEST</h2>
-      <motion.div
-        ref={carousel}
-        drag="x"
-        dragConstraints={{ right: 0, left: -width }}
-        className={classes.productsWraper}
-      >
-        {products.map((index) => {
-          return (
-            <motion.div className={classes.mainWrapper}>
-              <MainCard key={index} product={index} />
-            </motion.div>
-          );
-        })}
-      </motion.div>
+      <div>
+        <motion.div
+          ref={carousel}
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+          className={classes.productsWraper}
+        >
+          {products.map((index) => {
+            return (
+                 <div className={classes.mainWrapper}>
+                <MainCard key={index} product={index} />
+               </div>
+            );
+          })}
+        </motion.div>
+      </div>
     </div>
   );
 };

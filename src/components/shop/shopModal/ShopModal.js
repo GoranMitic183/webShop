@@ -6,6 +6,7 @@ import classes from "./ShopModal.module.css";
 import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import toast from "react-hot-toast";
 
 const ShopModal = forwardRef(function Modal(props, ref) {
   const product = props.product;
@@ -18,7 +19,12 @@ const ShopModal = forwardRef(function Modal(props, ref) {
   useImperativeHandle(ref, () => {
     return {
       open: () => {
-        dialog.current.showModal();
+        if(token){
+          dialog.current.showModal();
+
+        }else {
+          toast.error("Login if you want to shop.")
+        }
       },
       close: () => {
         dialog.current.close();
