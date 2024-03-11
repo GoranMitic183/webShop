@@ -13,6 +13,7 @@ const ShopModal = forwardRef(function Modal(props, ref) {
   const dialog = useRef();
   const dispatch = useDispatch();
   const location = useLocation();
+  console.log(location.pathname);
 
   let token = JSON.parse(localStorage.getItem("token"));
 
@@ -21,9 +22,8 @@ const ShopModal = forwardRef(function Modal(props, ref) {
       open: () => {
         if(token){
           dialog.current.showModal();
-
         }else {
-          toast.error("Login if you want to shop.")
+          toast.error("Please login first.")
         }
       },
       close: () => {
@@ -44,7 +44,7 @@ const ShopModal = forwardRef(function Modal(props, ref) {
 
   return createPortal(
     <dialog ref={dialog} className={classes.wraper}>
-      {location.pathname !== "/profile" && (
+      {location.pathname !== "/profile" &&  (
         <>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div>

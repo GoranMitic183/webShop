@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import classes from "./Rate.module.css";
 import { useParams } from "react-router-dom";
 import { sendMessage } from "../../API/api";
+import toast from "react-hot-toast";
 
 const Rate = () => {
   const navigate = useNavigate();
@@ -26,7 +27,11 @@ const Rate = () => {
   }
 
   function handleSend() {
-    sendMessage(productID, message, stars, name, categoryID);
+    if(stars > 0 && message.length > 0){
+      sendMessage(productID, message, stars, name, categoryID);
+    }else {
+      toast.error("Please rate and write comment first.")
+    }
   }
 
   return (

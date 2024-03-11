@@ -13,6 +13,14 @@ const MainCard = ({ product, id }) => {
 
   let user = JSON.parse(localStorage.getItem("token"));
 
+  console.log(product);
+  let discount;
+  if(product.discount > 0){
+     discount = (+product.price) - (+product.price/ (100/+product.discount));
+
+  }
+  // console.log( (+product.price)-(+product.price/(100/+product.discount)));
+
   const dispatch = useDispatch();
   const modal = useRef();
 
@@ -50,7 +58,11 @@ const MainCard = ({ product, id }) => {
           <h2>{product.productName}</h2>
           <h3>{product.type}</h3>
           {product.weight && <p>{product.weight + " g"}</p>}
-          <p>{product.price + " RSD"}</p>
+          <div style={{display: "inline-flex" , justifyContent: "center", alignItems: "center"}}>
+          {product.discount > 0 && (<p style={{textDecoration: "line-through", fontSize: ".9rem" , marginRight: ".5rem"}}>{product.price > 999 ? product.price.toString()[0] + "." + product.price.toString().slice(1) + " RSD " : product.price + " RSD "}</p>)}         
+          {product.discount > 0 ? (<p style={{color: "red"}}>{product.price > 999 ? discount.toString()[0] + "." + discount.toString().slice(1) + " RSD " : discount + " RSD "}</p>) : <p>{product.price > 999 ? product.price.toString()[0] + "." + product.price.toString().slice(1) + " RSD " : product.price + " RSD "}</p>}
+          </div>
+          
         </div>
       </Link>
 

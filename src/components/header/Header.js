@@ -75,7 +75,7 @@ const Header = () => {
     <header className={`${classes[container]}`}>
       <SortModal ref={modal}/>
       <h1 className={`${classes[style]}`}>{text}</h1>
-      {products && (
+      {products && location.pathname === "/categories" && (
         <div className={classes.sort} onClick={handleSort}>
           <FontAwesomeIcon icon={faArrowDownWideShort} size="2x" />
         </div>

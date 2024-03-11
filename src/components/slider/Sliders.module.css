@@ -33,6 +33,7 @@
     height: 1rem;
     width: 1rem;
     margin-right: 2rem;
+    cursor: pointer;
 }
 .dotActive {
     border-radius: 50%;

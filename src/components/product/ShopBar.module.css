@@ -15,6 +15,7 @@
     background-color:  rgb(225, 224, 224);
     margin-right: 1rem;
     padding: 1rem;
+    cursor: pointer;
 }
 .addBtn {
     border-radius: .5rem;
@@ -23,4 +24,8 @@
     padding: 1rem 2rem;
     font-weight: bolder;
     font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }

@@ -3,8 +3,11 @@
     justify-content: space-between;
     background-color: rgb(225, 224, 224);
     height: 7rem;
-    border-radius: .5rem;
-    width: 90%;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    width: 100%;
     margin: 1rem 0;
     text-decoration: none;
     color: black;
@@ -18,5 +21,5 @@
 }
 .circle {
     position: absolute;
-    right: 2rem;
+    right: 1rem;
 }

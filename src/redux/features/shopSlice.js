@@ -10,15 +10,18 @@ const shopSlice = createSlice({
     setProduct: (state, action) => {
       const { products, user } = action.payload;
       const existingProductIndex = state.products.findIndex(
-        (product) =>
-          product.velicina === action.payload.velicina &&
-          product.productName === action.payload.productName
+        (product) => 
+          product.velicina === products.velicina &&
+          product.productName === products.productName
       );
+    
       if (existingProductIndex !== -1) {
-        state.products[existingProductIndex].kolicina =
-          parseInt(state.products[existingProductIndex].kolicina) + 1;
+        const updatedProducts = [...state.products];
+        updatedProducts[existingProductIndex].kolicina =
+          parseInt(updatedProducts[existingProductIndex].kolicina, 10) + 1; 
+        state.products = updatedProducts; 
       } else {
-        state.products.push({ ...products, user });
+        state.products.push({ ...products, user }); 
       }
     },
     removeProduct: (state, action) => {

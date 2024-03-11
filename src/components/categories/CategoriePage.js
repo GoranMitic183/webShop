@@ -14,10 +14,8 @@ const CategoriePage = () => {
   const { products } = useSelector((state) => ({ ...state.searchData }));
   const { sort } = useSelector((state) => ({ ...state.searchData }));
 
-  console.log(sort);
-console.log(products);
-
 const [sorted , setSorted ] = useState([]);
+const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     let sortedProducts = products;
@@ -43,10 +41,10 @@ const [sorted , setSorted ] = useState([]);
     }
   }, [sort, products]);
 
-  console.log(sorted);
 
-  const [searchTerm, setSearchTerm] = useState("");
-  console.log(searchTerm);
+  // function handleSearchInput(value) {
+  //   setSearchTerm(value);
+  // }
 
   function handleClose() {
     dispatch(removeProducts());
@@ -55,7 +53,7 @@ const [sorted , setSorted ] = useState([]);
 
   return (
     <div className={classes.container}>
-      <SearchBar onSearch={setSearchTerm} />
+      <SearchBar onSearch={setSearchTerm} searchTerm={searchTerm}/>
       {searchTerm && (
         <div className={classes.results}>
           <p style={{ color: "gray" }}>{`Results for "${searchTerm}"`}</p>

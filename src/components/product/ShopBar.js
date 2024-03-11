@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setWishList } from "../../redux/features/wishSlice";
 import { setProduct } from "../../redux/features/shopSlice";
 import ShopModal from "../shop/shopModal/ShopModal";
-import { toast} from "react-toastify";
+import  toast  from "react-hot-toast";
 
 const ShopBar = ({ product }) => {
 
@@ -31,7 +31,7 @@ const ShopBar = ({ product }) => {
       }else {
         toast.error("Login if you want to shop.")
       }
-    }
+    } 
   };
 
   return (

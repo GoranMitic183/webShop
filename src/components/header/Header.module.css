@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     z-index: 99;
+    padding-bottom: 1rem;
 }
 .center {
     border-bottom: 1px solid gray;
@@ -22,6 +23,7 @@
 .head {
     font-style: italic;
     text-align: center;
+
 }
 .sort {
     position: absolute;

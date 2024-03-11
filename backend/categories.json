@@ -3,10 +3,10 @@
     "men": [
       {
         "_id": "1",
-        "productName": "EVERYDAY Smoke Gray",
+        "productName": "EVERYDAY Carbon black oversize duks",
         "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "6.490",
+        "description": "Oversize EVERYDAY duksevi idealni za hladnije vreme!Mekani pamuk, udoban širi kroj i diskretna brik štampa na sredini grudi mu daju urbani ali elegantni izgled koji se može kombinovati i sa trenerkom i sa farmerkama.",
+        "price": "6490",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
@@ -15,19 +15,13 @@
             "1": "https://gymster.rs/wp-content/uploads/2023/10/1-3.jpg"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2023/10/2-3.jpg"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2023/10/3-3.jpg"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
-          },
-          {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
-          },
-          {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2023/10/4-3.jpg"
           }
         ],
         "rate": [
@@ -66,31 +60,31 @@
       },
       {
         "_id": "2",
-        "productName": "EVERYDAY Smoke Gray",
+        "productName": "EVERYDAY Chili red oversize duks",
         "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "description": "Oversize EVERYDAY duksevi idealni za hladnije vreme!Mekani pamuk, udoban širi kroj i diskretna brik štampa na sredini grudi mu daju urbani ali elegantni izgled koji se može kombinovati i sa trenerkom i sa farmerkama.",
+        "price": "5490",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://www.titaniumsport.rs/wp-content/uploads/2019/03/Gold-Standard-100-Whey-2.27kg-Double-Rich-Chocolate-1.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2023/10/1-2.jpg"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2023/10/2-2.jpg"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2023/10/3-2.jpg"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2023/10/4-2.jpg"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2023/10/5-2.jpg"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2023/10/6-2.jpg"
           }
         ],
         "rate": [
@@ -133,10 +127,10 @@
     "women": [
       {
         "_id": "3",
-        "productName": "EVERYDAY Smoke Gray",
+        "productName": "EVERYDAY Carbon Black crop duks",
         "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "description": "EVERYDAY Carbon Black crop top duks u koji se zaljubljujemo na prvi pogled.Crna boja odiše snagom, baš kao i GYMSTERKE koje ćete videti u ovom duksu. Kragna je podesiva, detalji će vas oduševiti, a kroj pristaje svima. Osećaj se prirodno, prijatno i udobno u ovom duksu bilo gde da se nalaziš – od kuće do teretane.",
+        "price": "6490",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
@@ -145,19 +139,19 @@
             "1": "https://gymster.rs/wp-content/uploads/2023/11/1-4.jpg"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2023/11/2-4.jpg"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2023/11/3-4.jpg"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2023/11/5-4.jpg"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2023/11/4-4.jpg"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2023/11/6-4.jpg"
           }
         ],
         "rate": [
@@ -196,31 +190,31 @@
       },
       {
         "_id": "4",
-        "productName": "EVERYDAY Smoke Gray",
+        "productName": "ACTIVE Carbon black komplet",
         "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "description": "ACTIVE kolekcija namenjena devojkama bila za trening ili svakodnevnu odevnu kombinaciju.Ono što ovaj komplet izdvaja je izuzetna rastegljivost materijala pa se time prilagođava svakom obliku tela.Prijanja uz telo prilikom svakog pokreta, a materijal je prijatan i nežan prema tvojoj koži.",
+        "price": "5490",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://www.titaniumsport.rs/wp-content/uploads/2019/03/Gold-Standard-100-Whey-2.27kg-Double-Rich-Chocolate-1.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2023/10/1-9.jpg"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2023/10/2-9.jpg"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2023/10/3-9.jpg"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2023/10/4-9.jpg"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2023/10/5-8.jpg"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2023/10/8-3.jpg"
           }
         ],
         "rate": [
@@ -263,31 +257,31 @@
     "acessories": [
       {
         "_id": "5",
-        "productName": "EVERYDAY Smoke Gray",
-        "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
-        "boja": "siva",
+        "productName": "GYMSTER Privezak",
+        "type": "privezak",
+        "description": "Cena je simbolična, a svakako da ćete privezak dobiti uz bilo šta što naručite od odeće sa sajta.",
+        "price": "590",
+        "boja": "crna",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://gymster.rs/wp-content/uploads/2023/07/1-7.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2023/06/273473856-5004547662899591-4877995312375691147-n.jpg"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2023/06/273412432-5017332258310686-848705233837213478-n.jpg"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2023/06/274131945-4744776425558314-8164855103407980732-n.jpg"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2023/06/273544212-4671668406291929-5254687283520665674-n.jpg"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2023/06/273424015-4990895524281493-3923392697129942814-n.jpg"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2023/06/273601453-4762788967162113-5849077210603302855-n.jpg"
           }
         ],
         "rate": [
@@ -326,31 +320,31 @@
       },
       {
         "_id": "6",
-        "productName": "EVERYDAY Smoke Gray",
-        "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "productName": "GYMSTER Shaker",
+        "type": "shaker",
+        "description": "ŠTA SE MUĆKA?Napajanje tela je neophodno za savršen trening. Bez obzira da li se mućka protein, pre workout ili se hidrirate, uvek možete računati na GYMSTER shaker.Moderna, izdržljiva i sa kul bojom, prosto izgleda odlično.",
+        "price": "5490",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://gymster.rs/wp-content/uploads/2024/01/1.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2023/05/1-9.png"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2023/05/2-10.png"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2023/05/3-9.png"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2023/05/4-9.png"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2023/05/5-9.png"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2023/05/6-9.png"
           }
         ],
         "rate": [
@@ -393,31 +387,31 @@
     "food": [
       {
         "_id": "7",
-        "productName": "EVERYDAY Smoke Gray",
-        "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "productName": "BAREBELLS CARAMEL-CASHEW 12 x 55g",
+        "type": "cokoladica",
+        "description": "BAREBELLS Caramel-Cashew je vaša nova proteinska ljubav. Idealna kombinacija karamele i indijskog oraha sa 20g proteina i bez dodatog šećera. Savršena poslastica za svako doba dana koja ne ostavlja osećaj griže savesti. Uživajte!Pakovanje: 12 komada x 55g",
+        "price": "3240",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://gymster.rs/wp-content/uploads/2023/07/1-7.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2022/01/Barebells-Caramel-Cashew-1.png"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2022/01/5.png"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2022/01/7.png"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2022/01/3.png"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2022/01/4.png"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2022/01/9.png"
           }
         ],
         "rate": [
@@ -456,31 +450,31 @@
       },
       {
         "_id": "8",
-        "productName": "EVERYDAY Smoke Gray",
-        "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "productName": "BAREBELLS CARAMEL CHOCO 12 x 55g",
+        "type": "cokoladica",
+        "description": "Najmekša čokoladica do sada – prelivena slojem karamele i svilenkastim slojem čokolade, a sa 16g proteina i bez dodatih šećera idealna je užina u bilo kom trenutku.Glad se dešava – Barebells pomaže.",
+        "price": "2560",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://gymster.rs/wp-content/uploads/2024/01/1.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2023/10/2-13.jpg"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2023/10/311588940-2105780436273873-3110299568488086206-n.jpg"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2023/10/367008572-776180181177952-5205804755165006332-n.jpg"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2023/10/308248274-1240046686836518-7265154316521917005-n.jpg"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2023/10/272636044-466266225040557-904161273831569735-n.jpg"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2023/10/374235848-18280788334145864-2006911643537710825-n.jpg"
           }
         ],
         "rate": [
@@ -523,31 +517,31 @@
     "drinks": [
       {
         "_id": "9",
-        "productName": "EVERYDAY Smoke Gray",
-        "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "productName": "Barebells Milkšejk Čokolada 8 x 330ml",
+        "type": "milkshake",
+        "description": "Barebells proteinski milkšejk je savršena zamena za obrok ili dodatak istom. Može se konzumirati u svako doba dana, a 330ml napitka sadrži 24g proteina, 12g hidrata i 4,3g masti što je savršeno izbalansiran odnos makronutrijenata sa samo 182 kalorije. Uživajte bez osećaja griže savesti!Alergeni: mleko.Dobro promućkati pre upotrebe i najbolje konzumirati dobro ohlađeno.Zemlja porekla: Švedska.Pakovanje: 8 kom x 330ml",
+        "price": "2560",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://gymster.rs/wp-content/uploads/2023/07/1-7.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2022/01/Barebells-Milkshake-Cokolada-1.png"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2022/01/2-4.png"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2022/01/3-4.png"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2022/01/4-4.png"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2022/01/6-5.png"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2022/01/7-3.png"
           }
         ],
         "rate": [
@@ -586,31 +580,31 @@
       },
       {
         "_id": "10",
-        "productName": "EVERYDAY Smoke Gray",
-        "type": "trenerka",
-        "description": "EVERYDAY trenerka napravljena od mekanog skuba pamuka koji daje udoban i prijatan osećaj tokom nošenja.Bilo da je nosite na trening ili tokom obavljanja svakodnevnih obaveza, trenerka koja će sve to ispratiti.",
-        "price": "5.490",
+        "productName": "Barebells Milkšejk Vanila 8 x 330ml",
+        "type": "vanila",
+        "description": "Barebells proteinski milkšejk je savršena zamena za obrok ili dodatak istom. Može se konzumirati u svako doba dana, a 330ml napitka sadrži 24g proteina, 12g hidrata i 4,6g masti što je savršeno izbalansiran odnos makronutrijenata sa samo 185 kalorija. Uživajte bez osećaja griže savesti!Alergeni: mleko.Dobro promućkati pre upotrebe i najbolje konzumirati dobro ohlađeno.Zemlja porekla: Švedska.Pakovanje: 8 kom x 330ml",
+        "price": "2560",
         "boja": "siva",
         "velicina": ["s", "m", "l", "xl", "xxl"],
         "kolicina": "12",
         "img": [
           {
-            "1": "https://gymster.rs/wp-content/uploads/2024/01/1.jpg"
+            "1": "https://gymster.rs/wp-content/uploads/2022/01/Barebells-Milkshake-Vanila-1.png"
           },
           {
-            "2": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Foptimum-nutrition-gold-standard-ready-to-drink-protein-shake-release-info-002.jpg?cbr=1&q=90"
+            "2": "https://gymster.rs/wp-content/uploads/2022/01/2-6.png"
           },
           {
-            "3": "https://www.getsupp.com/static/media/__resized/images/products/B4ZC8M2ETCNPW2EN4-130a5b60-0f2f-4552-a2ef-15ef588a45da-thumbnail_webp-1080x1080-70.webp"
+            "3": "https://gymster.rs/wp-content/uploads/2022/01/3-6.png"
           },
           {
-            "4": "https://www.gosupps.com/media/catalog/product/cache/25/image/600x675/9df78eab33525d08d6e5fb8d27136e95/7/1/71rpih5kesl._ac_sl1500_.jpg"
+            "4": "https://gymster.rs/wp-content/uploads/2022/01/5-6.png"
           },
           {
-            "5": "https://musclefreak.rs/cdn/shop/products/seeee_1024x1024.jpg?v=1526285488"
+            "5": "https://gymster.rs/wp-content/uploads/2022/01/6-7.png"
           },
           {
-            "6": "https://www.stack3d.com/wp-content/uploads/2023/11/optimum-nutrition-smores-gold-standard.jpg"
+            "6": "https://gymster.rs/wp-content/uploads/2022/01/4-6.png"
           }
         ],
         "rate": [

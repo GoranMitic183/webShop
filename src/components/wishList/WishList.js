@@ -36,7 +36,9 @@ const navigateShop = () => {
     <div className={classes.wraper}>
         {wishList.map((product)=>{
             return (
-                 <MainCard  product={product.product} like={product.like} key={product._id}/>             
+              <div className={classes.container}>
+                 <MainCard  product={product.product} like={product.like} key={product._id}/>  
+                 </div>           
             )
         })}
     </div>

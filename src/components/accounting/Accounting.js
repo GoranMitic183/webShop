@@ -58,7 +58,7 @@ const Accounting = () => {
         <hr></hr>
         <div>
           <p>Total (excluding shipping) {total} RSD</p>
-          <p>delivery expenses {shiping} RSD</p>
+          <p>Delivery expenses: {shiping} RSD</p>
           <h2>Total price {total + shiping} RSD</h2>
           <p>Get free shipping on purchases over 5.000RSD</p>
         </div>

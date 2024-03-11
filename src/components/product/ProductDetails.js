@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef} from "react";
 import classes from "./ProductDetails.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowLeft, faArrowUp } from "@fortawesome/free-solid-svg-icons";
@@ -7,9 +7,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import ShopBar from "./ShopBar";
+import ImgModal from "../shop/imgModal/ImgModal";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
+  const modal = useRef();
   const { products } = useSelector((state) => ({ ...state.products }));
   const { category } = useSelector((state) => state.category);
   const [ starNum, setStarNum ] = useState(0);
@@ -67,20 +69,29 @@ const ProductDetails = () => {
     if(token){
       navigate(`/rate/${DATA._id}/${categoryID}`)
     }else{
-      toast.error("Login if you want to send message")
+      toast.error("Login if you want to rate product!")
     }
   }
 
   function handleShowComments() {
-    setShow(!show)
+    if(token){
+      setShow(!show)
+    } else {
+      toast.error("Login if you want to show comments!")
+    }
+  }
+
+  function handleModal() {
+    modal.current.open()
   }
 
   return (
     <div className={classes.wraper}>
+      <ImgModal ref={modal} img={image} product={DATA} id={productID} cat={categoryID}/>
       <btn onClick={handleBack} className={classes.backBtn}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </btn>
-      <div className={classes.pictureWrap}>
+      <div className={classes.pictureWrap} onClick={handleModal}>
         <img src={image} alt="pictures" className={classes.picture}></img>
       </div>
 
@@ -118,7 +129,7 @@ const ProductDetails = () => {
 
         <div className={classes.rateing}>
           <div>
-            <p style={{ fontWeight: "bold" }}>Ratings and comentars</p>
+            <p style={{ fontWeight: "bold" }}>Ratings and comments</p>
             {!DATA.rate.length > 0 && <p>No comments for now</p>}
             {DATA.rate && (
               <>
@@ -142,7 +153,7 @@ const ProductDetails = () => {
                           />
                         ))}
                       </div>
-                      <div>Rate number: {DATA.rate.length}</div>
+                      <div style={{marginTop: ".2rem"}}>Number of rates: {DATA.rate.length}</div>
                     </div>
                   </div>
                   <div className={classes.btnWraper}>

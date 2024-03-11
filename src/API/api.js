@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 
 const API = axios.create({ baseURL: "http://localhost:3002" });
 
+
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("user")) {
     req.headers.Authorization = `Bearer ${
@@ -133,7 +134,7 @@ export async function removeUser(id) {
 }
 
 export async function sendMessage(id, text, stars, name, categoryID) {
-  console.log(categoryID);
+  console.log(categoryID);  
   try {
     const response = await API.patch(
       `/rating/${id}`,
@@ -150,6 +151,7 @@ export async function sendMessage(id, text, stars, name, categoryID) {
       if (data.message === "Success") {
         console.log("Successfuly send message");
         toast.success("Message successfully send.")
+        
       } else {
         console.warn("Unexpected success response:", data);
       }
